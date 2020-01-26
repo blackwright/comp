@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from './index';
 
 export default {
-  title: 'Button',
-  component: Button,
+  title: 'Inputs/Button',
+  component: Button
 };
 
 const handleClick = () => alert('clicked!');
