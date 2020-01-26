@@ -15,8 +15,8 @@ const mediaQueries = [
 export const ConditionalRender = () => (
   <>
     {mediaQueries.map(query => (
-      <>
-        <div key={query}>
+      <React.Fragment key={query}>
+        <div>
           {query} match:{' '}
           <MatchMedia query={query}>
             {isMatch =>
@@ -28,7 +28,7 @@ export const ConditionalRender = () => (
             }
           </MatchMedia>
         </div>
-      </>
+      </React.Fragment>
     ))}
   </>
 );
