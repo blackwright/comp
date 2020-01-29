@@ -12,10 +12,10 @@ const VisibleCheckboxComponent: React.FC<Props> = ({ className }) => (
 const CheckIcon = styled(FaCheck)``;
 
 export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
-  ({ checked, disabled, isHovered }) => css`
+  ({ checked, disabled, isHovered, theme }) => css`
     color: white;
     background: lightgray;
-    border-radius: 4px;
+    border-radius: ${theme.spacing / 2}px;
     width: 24px;
     height: 24px;
     margin-right: 8px;
