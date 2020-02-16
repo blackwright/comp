@@ -9,32 +9,40 @@ const VisibleCheckboxComponent: React.FC<Props> = ({ className }) => (
   </div>
 );
 
+// Wrap in styled factory to allow component selector CSS rule
 const CheckIcon = styled(FaCheck)``;
 
 export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
-  ({ checked, disabled, isHovered, theme }) => css`
-    color: white;
-    background: lightgray;
-    border-radius: ${theme.spacing / 2}px;
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+  ({
+    checked,
+    disabled,
+    isHovered,
+    theme: { spacing, colors, transitions }
+  }) => css`
+    color: ${colors.all.white.css.hex};
+    border-radius: ${spacing(0.5)}px;
+    width: ${spacing(3)}px;
+    height: ${spacing(3)}px;
+    margin-right: ${spacing()}px;
+    border: 1px solid ${colors.all.blue3.css.hex};
+    transition: all ${transitions.slow};
+    background: ${checked
+      ? colors.background.action.css.hex
+      : colors.all.white.css.hex};
     display: flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    border: 1px solid lightgray;
-    transition: all 250ms ease-in-out;
 
     & > ${CheckIcon} {
       opacity: ${checked ? 1 : 0};
-      transition: opacity 150ms linear;
+      transition: opacity ${transitions.fast};
     }
 
     ${isHovered &&
       !disabled &&
       css`
-        border-color: gray;
+        border-color: ${colors.background.action.css.hex};
       `}
   `
 );
