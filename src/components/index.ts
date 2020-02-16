@@ -8,3 +8,4 @@ export {
   Props as TypographyProps,
   Variant as TypographyVariant
 } from './typography';
+export { Block, Props as BlockProps } from './block';
