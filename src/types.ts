@@ -21,3 +21,7 @@ export type InteractableComponentProps<
 export type ComponentType<P = {}> =
   | React.ComponentClass<P>
   | React.FunctionComponent<P>;
+
+export type Dictionary<T> = {
+  [key: string]: T;
+};
