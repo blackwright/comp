@@ -1,0 +1,10 @@
+export { monochrome } from './monochrome';
+export { blues } from './blues';
+export { greens } from './greens';
+export { limes } from './limes';
+export { oranges } from './oranges';
+export { pinks } from './pinks';
+export { purples } from './purples';
+export { reds } from './reds';
+export { teals } from './teals';
+export { yellows } from './yellows';
