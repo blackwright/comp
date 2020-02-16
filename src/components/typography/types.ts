@@ -8,4 +8,6 @@ export type Props = {
   as?: keyof JSX.IntrinsicElements;
   // Determines properties such as size, line-height, and weight
   variant?: Variant;
+  // Text color
+  color?: string;
 } & ComponentProps<'span'>;
