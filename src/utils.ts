@@ -9,3 +9,11 @@ export function mergeRefs<T>(refs: Array<React.Ref<T>>) {
     });
   };
 }
+
+export function capitalize(text: string) {
+  if (!text.length) {
+    throw new Error('Text must have at least one character');
+  }
+
+  return text[0].toLocaleUpperCase() + text.slice(1);
+}
