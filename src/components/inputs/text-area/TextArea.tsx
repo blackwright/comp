@@ -18,7 +18,7 @@ export const TextArea: React.FC<Props> = React.forwardRef(
       (textArea: HTMLTextAreaElement | null) => {
         resize(textArea, fitContents);
       },
-      [fitContents, val]
+      [fitContents]
     );
 
     const handleChange = (

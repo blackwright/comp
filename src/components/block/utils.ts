@@ -1,4 +1,3 @@
-import { css } from 'styled-components';
 import { Size, Props, sizeStringToNumberValue, MappedSize } from './types';
 
 export function getSizeValue(size?: Size): string {

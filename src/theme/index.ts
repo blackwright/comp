@@ -1,11 +1,13 @@
-import { spacing } from './spacing';
+import { sizing } from './sizing';
 import { font } from './font';
 import { colors } from './colors';
 import { transitions } from './transitions';
 import { shadows } from './shadows';
 
+export { ColorName } from './colors';
+
 const theme = {
-  spacing,
+  sizing,
   font,
   colors,
   transitions,

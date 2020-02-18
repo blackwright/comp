@@ -17,7 +17,7 @@ type Value = {
   height: string;
   family: string;
   weight: number;
-  spacing: string;
+  sizing: string;
   transform: string;
 };
 

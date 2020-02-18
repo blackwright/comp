@@ -17,18 +17,16 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
     checked,
     disabled,
     isHovered,
-    theme: { spacing, colors, transitions }
+    theme: { sizing, colors, transitions }
   }) => css`
-    color: ${colors.all.white.css.hex};
-    border-radius: ${spacing(0.5)}px;
-    width: ${spacing(3)}px;
-    height: ${spacing(3)}px;
-    margin-right: ${spacing()}px;
-    border: 1px solid ${colors.all.blue3.css.hex};
+    color: ${colors.white.hex};
+    border-radius: ${sizing.fn(0.5)}px;
+    width: ${sizing.fn(3)}px;
+    height: ${sizing.fn(3)}px;
+    margin-right: ${sizing.fn()}px;
+    border: 1px solid ${colors.blue3.hex};
     transition: all ${transitions.slow};
-    background: ${checked
-      ? colors.background.action.css.hex
-      : colors.all.white.css.hex};
+    background: ${checked ? colors.background.action.hex : colors.white.hex};
     display: flex;
     flex: 0 0 auto;
     align-items: center;
@@ -42,7 +40,7 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
     ${isHovered &&
       !disabled &&
       css`
-        border-color: ${colors.background.action.css.hex};
+        border-color: ${colors.background.action.hex};
       `}
   `
 );

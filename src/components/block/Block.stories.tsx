@@ -25,32 +25,32 @@ export const SizePresets = () => (
 );
 
 const MarginBlock = styled(Block)(
-  ({ theme: { spacing, colors } }) => css`
-    background-color: ${colors.all.orange3.css.hex};
-    border: 1px dashed ${colors.all.dark3.css.hex};
-    margin-bottom: ${spacing(1)}px;
+  ({ theme: { sizing, colors } }) => css`
+    background-color: ${colors.orange3.hex};
+    border: 1px dashed ${colors.dark3.hex};
+    margin-bottom: ${sizing.fn(1)}px;
   `
 );
 
 const PaddingBlock = styled(Block)(
   ({ theme: { colors } }) => css`
-    background-color: ${colors.all.green2.css.hex};
-    border: 1px dashed ${colors.all.dark3.css.hex};
+    background-color: ${colors.green2.hex};
+    border: 1px dashed ${colors.dark3.hex};
   `
 );
 
 const BorderBlock = styled.div(
   ({ theme: { colors } }) => css`
-    background-color: ${colors.all.yellow3.css.hex};
+    background-color: ${colors.yellow3.hex};
     padding: 5px;
   `
 );
 
 const TextBlock = styled.div(
-  ({ theme: { spacing, colors } }) => css`
-    padding: ${spacing(1)}px;
-    background-color: ${colors.all.blue2.css.hex};
-    border: 1px dashed ${colors.all.dark3.css.hex};
+  ({ theme: { sizing, colors } }) => css`
+    padding: ${sizing.fn(1)}px;
+    background-color: ${colors.blue2.hex};
+    border: 1px dashed ${colors.dark3.hex};
     text-align: center;
   `
 );

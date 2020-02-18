@@ -20,10 +20,4 @@ export type ColorCSS = {
 
 export type ColorValues = {
   value: RGB;
-  css: ColorCSS;
-};
-
-export enum Brightness {
-  LIGHT = 'light',
-  DARK = 'dark'
-}
+} & ColorCSS;

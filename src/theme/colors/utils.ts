@@ -1,5 +1,5 @@
 import chroma, { Color } from 'chroma-js';
-import { RGB, ColorScale, ColorValues, Brightness } from './types';
+import { RGB, ColorScale, ColorValues } from './types';
 
 /**
  * Generates a color scale from a base RGB color, producing
@@ -51,16 +51,14 @@ export function rgbToHex(color: RGB) {
 export function addCSSToColorDictionary<T>(dictionary: T) {
   return Object.entries(dictionary).reduce((acc, [key, value]) => {
     acc[key as keyof typeof dictionary] = {
-      value,
-      css: {
-        rgb: rgbToCSS(value),
-        hex: rgbToHex(value)
-      }
+      hex: rgbToHex(value),
+      rgb: rgbToCSS(value),
+      value
     };
     return acc;
   }, {} as Record<keyof typeof dictionary, ColorValues>);
 }
 
-export function getBrightness(color: RGB): Brightness {
-  return chroma(color).get('lab.l') < 65 ? Brightness.DARK : Brightness.LIGHT;
+export function isBright(color: RGB): boolean {
+  return chroma(color).get('lab.l') > 65;
 }

@@ -22,7 +22,7 @@ export const MatchMedia: React.FC<Props> = ({ query, children }) => {
         matchListRef.current.removeListener(handleMediaQueryListEvent);
       }
     };
-  }, [query]);
+  }, [query, handleMediaQueryListEvent]);
 
   if (isMatch === undefined || !children) {
     return null;

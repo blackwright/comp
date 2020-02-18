@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 import { colors } from 'theme/colors';
-import { ColorValues } from 'theme/colors/types';
-import { Dictionary } from 'types';
 import { Props } from './types';
 
 export const Typography = styled.span.attrs<Props>(({ testId }) => ({
@@ -12,11 +10,8 @@ export const Typography = styled.span.attrs<Props>(({ testId }) => ({
   let colorCSS = 'inherit';
 
   if (color) {
-    const themeColor = (colors.all as Dictionary<ColorValues>)[color];
-
-    if (themeColor) {
-      colorCSS = themeColor.css.hex;
-    }
+    const themeColor = colors[color];
+    colorCSS = themeColor.hex;
   }
 
   return css`
@@ -24,7 +19,7 @@ export const Typography = styled.span.attrs<Props>(({ testId }) => ({
     font-size: ${font.size};
     font-weight: ${font.weight};
     line-height: ${font.height};
-    letter-spacing: ${font.spacing};
+    letter-sizing: ${font.sizing};
     text-transform: ${font.transform};
     color: ${colorCSS};
   `;

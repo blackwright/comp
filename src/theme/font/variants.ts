@@ -2,7 +2,7 @@ import { Variants } from './types';
 
 const family = 'Roboto, Arial, sans-serif';
 const weight = 400;
-const spacing = 'normal';
+const sizing = 'normal';
 const transform = 'none';
 
 const defaults = {
@@ -10,7 +10,7 @@ const defaults = {
   height: '1.25rem',
   family,
   weight,
-  spacing,
+  sizing,
   transform
 };
 
@@ -56,7 +56,7 @@ export const variants: Variants = {
     size: '0.75rem',
     height: '1.25rem',
     weight: weight * 1.5,
-    spacing: 0.03 + 'em',
+    sizing: 0.03 + 'em',
     transform: 'uppercase'
   },
 

@@ -2,11 +2,11 @@ import { ComponentProps } from 'types';
 import theme from 'theme';
 
 export const sizeStringToNumberValue = {
-  xs: theme.spacing(1),
-  sm: theme.spacing(2),
-  md: theme.spacing(4),
-  lg: theme.spacing(8),
-  xl: theme.spacing(10)
+  xs: theme.sizing.fn(1),
+  sm: theme.sizing.fn(2),
+  md: theme.sizing.fn(4),
+  lg: theme.sizing.fn(8),
+  xl: theme.sizing.fn(10)
 };
 
 export type MappedSize = keyof typeof sizeStringToNumberValue;
