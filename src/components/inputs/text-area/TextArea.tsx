@@ -5,11 +5,9 @@ import { resize } from './utils';
 
 export const TextArea: React.FC<Props> = React.forwardRef(
   (
-    { testId, value, fitContents, onChange, disabled, isDisabled, ...rest },
+    { testId, value, fitContents, onChange, disabled, ...rest },
     ref: React.Ref<HTMLTextAreaElement>
   ) => {
-    const internalDisabled = disabled || isDisabled;
-
     const [val, setVal] = React.useState(value);
 
     React.useEffect(() => setVal(value), [value]);
@@ -37,7 +35,6 @@ export const TextArea: React.FC<Props> = React.forwardRef(
         ref={mergeRefs([ref, textAreaRef])}
         value={val ?? ''}
         onChange={handleChange}
-        disabled={internalDisabled}
         {...rest}
       />
     );
@@ -46,6 +43,5 @@ export const TextArea: React.FC<Props> = React.forwardRef(
 
 TextArea.defaultProps = {
   testId: 'text-area',
-  isDisabled: false,
   fitContents: false
 };

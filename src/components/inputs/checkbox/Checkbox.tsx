@@ -20,14 +20,11 @@ export const Checkbox: React.FC<Props> = React.forwardRef(
       checked,
       onChange,
       disabled,
-      isDisabled,
       children,
       ...rest
     },
     ref: React.Ref<HTMLInputElement>
   ) => {
-    const internalDisabled = disabled || isDisabled;
-
     const [isChecked, setIsChecked] = React.useState(
       !!(checked || defaultChecked)
     );
@@ -66,14 +63,14 @@ export const Checkbox: React.FC<Props> = React.forwardRef(
           data-testid={testId}
           checked={isChecked}
           onChange={handleChange}
-          disabled={internalDisabled}
+          disabled={disabled}
           {...rest}
         />
         <Components.VisibleCheckbox
           data-testid={visibleTestId}
           checked={isChecked}
           isHovered={isHovered}
-          disabled={internalDisabled}
+          disabled={disabled}
         />
         <Components.Description>{children}</Components.Description>
       </Components.Label>

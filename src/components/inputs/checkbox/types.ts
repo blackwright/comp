@@ -1,4 +1,4 @@
-import { InteractableComponentProps, ComponentType } from 'types';
+import { ComponentProps, ComponentType } from 'types';
 import { AlignItemsProperty } from 'csstype';
 import { LabelProps, VisibleCheckboxProps } from './components';
 
@@ -21,4 +21,4 @@ export type Props = {
   // Custom components
   components?: Partial<CustomizableComponents>;
 } & TestingProps &
-  Omit<InteractableComponentProps<'input'>, 'type'>;
+  Omit<ComponentProps<'input'>, 'type'>;

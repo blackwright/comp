@@ -27,7 +27,7 @@ export const Alignment = () =>
   ));
 
 export const Disabled = () => (
-  <Checkbox isDisabled={true}>
+  <Checkbox disabled={true}>
     <Description title="Disabled" />
   </Checkbox>
 );

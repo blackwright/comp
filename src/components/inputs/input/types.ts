@@ -1,3 +1,3 @@
-import { InteractableComponentProps } from 'types';
+import { ComponentProps } from 'types';
 
-export type Props = InteractableComponentProps<'input'>;
+export type Props = ComponentProps<'input'>;

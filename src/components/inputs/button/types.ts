@@ -1,4 +1,4 @@
-import { InteractableComponentProps } from 'types';
+import { ComponentProps } from 'types';
 import theme, { ColorName } from '../../../theme';
 
 export const sizeStringToPadding = {
@@ -34,4 +34,4 @@ export type Props = {
    * @default blue6
    */
   color?: ColorName;
-} & InteractableComponentProps<'button'>;
+} & ComponentProps<'button'>;

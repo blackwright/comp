@@ -23,5 +23,5 @@ IsInteger.story = {
 };
 
 export const Disabled = () => (
-  <NumberInput isDisabled={true} placeholder="Number input" />
+  <NumberInput disabled={true} placeholder="Number input" />
 );

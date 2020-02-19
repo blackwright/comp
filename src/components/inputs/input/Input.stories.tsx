@@ -8,4 +8,4 @@ export default {
 
 export const Default = () => <Input placeholder="Input" />;
 
-export const Disabled = () => <Input isDisabled={true} placeholder="Input" />;
+export const Disabled = () => <Input disabled={true} placeholder="Input" />;

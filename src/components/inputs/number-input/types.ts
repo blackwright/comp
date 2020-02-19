@@ -1,4 +1,4 @@
-import { InteractableComponentProps } from 'types';
+import { ComponentProps } from 'types';
 
 export type Props = {
   // Input value
@@ -11,7 +11,4 @@ export type Props = {
   onChange?: (value: number | null) => void;
   // Coerce float into integer value
   isInteger?: boolean;
-} & Omit<
-  InteractableComponentProps<'input'>,
-  'value' | 'min' | 'max' | 'onChange'
->;
+} & Omit<ComponentProps<'input'>, 'value' | 'min' | 'max' | 'onChange'>;

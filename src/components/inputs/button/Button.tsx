@@ -6,51 +6,38 @@ import { sizeStringToPadding } from './types';
 import { getBackgroundColor, getTextColor } from './utils';
 
 export const ButtonComponent: React.FC<Props> = React.forwardRef(
-  (
-    { testId, disabled, isDisabled, ...rest },
-    ref: React.Ref<HTMLButtonElement>
-  ) => {
-    const internalDisabled = disabled || isDisabled;
-
-    return (
-      <button
-        data-testid={testId}
-        ref={ref}
-        disabled={internalDisabled}
-        {...rest}
-      />
-    );
+  ({ testId, ...rest }, ref: React.Ref<HTMLButtonElement>) => {
+    return <button data-testid={testId} ref={ref} {...rest} />;
   }
 );
 
 ButtonComponent.defaultProps = {
   type: 'submit',
   size: 'md',
-  color: 'blue6',
-  isDisabled: false
+  color: 'blue6'
 };
 
 export const Button = styled(ButtonComponent)<Props>(
   ({
     size = 'md',
     color = 'blue6',
-    isDisabled,
+    disabled,
     theme: { sizing, colors, transitions }
   }) => {
-    const passiveColor = getBackgroundColor(colors[color], isDisabled);
+    const passiveColor = getBackgroundColor(colors[color], disabled);
     const hoverColor = darken(passiveColor, 0.75);
     const activeColor = darken(hoverColor, 0.75);
 
     return css`
       padding: ${sizeStringToPadding[size].y}px ${sizeStringToPadding[size].x}px;
       background: ${passiveColor.hex};
-      color: ${getTextColor(colors[color], isDisabled).hex};
+      color: ${getTextColor(colors[color], disabled).hex};
       border-radius: ${sizing.borderRadius};
       transition: background ${transitions.fast};
       outline: 0;
       border: 0;
 
-      ${!isDisabled &&
+      ${!disabled &&
         css`
           :hover {
             background: ${hoverColor.hex};

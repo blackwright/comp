@@ -1,6 +1,6 @@
-import { InteractableComponentProps } from 'types';
+import { ComponentProps } from 'types';
 
 export type Props = {
   // Automatically resize to fit contents
   fitContents?: boolean;
-} & InteractableComponentProps<'textarea'>;
+} & ComponentProps<'textarea'>;

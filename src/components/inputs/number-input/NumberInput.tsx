@@ -4,22 +4,9 @@ import { enforceBounds } from './utils';
 
 export const NumberInput: React.FC<Props> = React.forwardRef(
   (
-    {
-      testId,
-      value,
-      min,
-      max,
-      isInteger,
-      onChange,
-      onKeyDown,
-      disabled,
-      isDisabled,
-      ...rest
-    },
+    { testId, value, min, max, isInteger, onChange, onKeyDown, ...rest },
     ref: React.Ref<HTMLInputElement>
   ) => {
-    const internalDisabled = disabled || isDisabled;
-
     const [val, setVal] = React.useState<number | null | undefined>(value);
 
     React.useEffect(() => {
@@ -58,7 +45,6 @@ export const NumberInput: React.FC<Props> = React.forwardRef(
         type="number"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        disabled={internalDisabled}
         {...rest}
       />
     );
@@ -67,6 +53,5 @@ export const NumberInput: React.FC<Props> = React.forwardRef(
 
 NumberInput.defaultProps = {
   testId: 'number-input',
-  isInteger: false,
-  isDisabled: false
+  isInteger: false
 };

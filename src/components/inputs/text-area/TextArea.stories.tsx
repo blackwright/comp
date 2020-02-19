@@ -16,5 +16,5 @@ FitContents.story = {
 };
 
 export const Disabled = () => (
-  <TextArea placeholder="Text area" isDisabled={true} />
+  <TextArea placeholder="Text area" disabled={true} />
 );
