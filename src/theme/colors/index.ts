@@ -1,7 +1,7 @@
 import { rgbColors } from './colors';
 import { addCSSToColorDictionary } from './utils';
 
-export { ColorScale, ColorCSS, ColorValues } from './types';
+export { RGB, ColorScale, ColorCSS, ColorValues } from './types';
 
 const { byHue, ...rest } = rgbColors;
 const { background, text, ...raw } = rest;

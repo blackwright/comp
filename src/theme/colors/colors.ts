@@ -14,12 +14,14 @@ import {
 const background = {
   ...monochrome,
   action: blues.blue4,
-  error: reds.red3
+  error: reds.red3,
+  disabled: monochrome.light4
 };
 
 const text = {
   light: monochrome.light1,
-  dark: monochrome.dark4
+  dark: monochrome.dark4,
+  disabled: monochrome.gray1
 };
 
 export const rgbColors = {

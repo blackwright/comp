@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { isBright } from 'theme/colors/utils';
+import { darken } from 'theme/colors/utils';
 import { Props } from './index';
 import { sizeStringToPadding } from './types';
+import { getBackgroundColor, getTextColor } from './utils';
 
 export const ButtonComponent: React.FC<Props> = React.forwardRef(
   (
@@ -30,11 +31,35 @@ ButtonComponent.defaultProps = {
 };
 
 export const Button = styled(ButtonComponent)<Props>(
-  ({ size = 'md', color = 'blue6', theme: { colors } }) => css`
-    padding: ${sizeStringToPadding[size].y}px ${sizeStringToPadding[size].x}px;
-    background: ${colors[color].hex};
-    color: ${isBright(colors[color].value)
-      ? colors.text.light.hex
-      : colors.text.dark.hex};
-  `
+  ({
+    size = 'md',
+    color = 'blue6',
+    isDisabled,
+    theme: { sizing, colors, transitions }
+  }) => {
+    const passiveColor = getBackgroundColor(colors[color], isDisabled);
+    const hoverColor = darken(passiveColor, 0.75);
+    const activeColor = darken(hoverColor, 0.75);
+
+    return css`
+      padding: ${sizeStringToPadding[size].y}px ${sizeStringToPadding[size].x}px;
+      background: ${passiveColor.hex};
+      color: ${getTextColor(colors[color], isDisabled).hex};
+      border-radius: ${sizing.borderRadius};
+      transition: background ${transitions.fast};
+      outline: 0;
+      border: 0;
+
+      ${!isDisabled &&
+        css`
+          :hover {
+            background: ${hoverColor.hex};
+          }
+
+          :active {
+            background: ${activeColor.hex};
+          }
+        `}
+    `;
+  }
 );

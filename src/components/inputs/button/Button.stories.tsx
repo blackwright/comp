@@ -6,7 +6,7 @@ export default {
   component: Button
 };
 
-const handleClick = () => alert('clicked!');
+const handleClick = () => ({});
 
 export const Default = () => <Button onClick={handleClick}>Button</Button>;
 
