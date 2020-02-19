@@ -62,3 +62,21 @@ export function addCSSToColorDictionary<T>(dictionary: T) {
 export function isBright(color: RGB): boolean {
   return chroma(color).get('lab.l') > 65;
 }
+
+export function darken(color: RGB | ColorValues): ColorValues {
+  let rgb: RGB;
+
+  if ('value' in color) {
+    rgb = color.value;
+  } else {
+    rgb = color;
+  }
+
+  const darkened = chroma(rgb).darken();
+
+  return {
+    value: darkened.rgb(),
+    hex: darkened.hex(),
+    rgb: darkened.css()
+  };
+}
