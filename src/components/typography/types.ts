@@ -1,4 +1,4 @@
-import theme, { ColorName } from 'theme';
+import { theme, ColorName } from 'theme';
 import { ComponentProps } from 'types';
 
 export type Variant = keyof typeof theme.font.variants;

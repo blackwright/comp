@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Variant } from './index';
-import theme from 'theme';
+import { theme } from 'theme';
 
 export default {
   title: 'Typography',

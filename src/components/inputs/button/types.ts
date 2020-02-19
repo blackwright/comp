@@ -1,5 +1,5 @@
 import { ComponentProps } from 'types';
-import theme, { ColorName } from '../../../theme';
+import { theme, ColorName } from '../../../theme';
 
 export const sizeStringToPadding = {
   xs: {

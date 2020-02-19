@@ -1,5 +1,5 @@
 import { ComponentProps } from 'types';
-import theme from 'theme';
+import { theme } from 'theme';
 
 export const sizeStringToNumberValue = {
   xs: theme.sizing.fn(1),
