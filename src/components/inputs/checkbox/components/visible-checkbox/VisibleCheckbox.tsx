@@ -20,7 +20,7 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
     theme: { sizing, colors, transitions }
   }) => css`
     color: ${colors.white.hex};
-    border-radius: ${sizing.fn(0.5)}px;
+    border-radius: ${sizing.borderRadius};
     width: ${sizing.fn(3)}px;
     height: ${sizing.fn(3)}px;
     margin-right: ${sizing.fn()}px;
