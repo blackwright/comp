@@ -63,7 +63,7 @@ export function isBright(color: RGB): boolean {
   return chroma(color).get('lab.l') > 65;
 }
 
-export function darken(color: RGB | ColorValues): ColorValues {
+export function darken(color: RGB | ColorValues, amount = 1): ColorValues {
   let rgb: RGB;
 
   if ('value' in color) {
@@ -72,7 +72,7 @@ export function darken(color: RGB | ColorValues): ColorValues {
     rgb = color;
   }
 
-  const darkened = chroma(rgb).darken();
+  const darkened = chroma(rgb).darken(amount);
 
   return {
     value: darkened.rgb(),
