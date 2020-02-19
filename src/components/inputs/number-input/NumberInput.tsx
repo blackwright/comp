@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '../input';
 import { Props } from './types';
 import { enforceBounds } from './utils';
 
@@ -38,8 +39,8 @@ export const NumberInput: React.FC<Props> = React.forwardRef(
     };
 
     return (
-      <input
-        data-testid={testId}
+      <Input
+        testId={testId}
         ref={ref}
         value={val ?? ''}
         type="number"
