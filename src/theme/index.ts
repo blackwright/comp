@@ -5,8 +5,9 @@ import { transitions } from './transitions';
 import { shadows } from './shadows';
 
 export { ColorName } from './colors';
+export { GlobalStyle } from './GlobalStyle';
 
-const theme = {
+export const theme = {
   sizing,
   font,
   colors,
@@ -15,5 +16,3 @@ const theme = {
 };
 
 export type Theme = typeof theme;
-
-export default theme;

@@ -1,11 +1,14 @@
 import React from 'react';
 import { addParameters, addDecorator } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
-import theme from 'theme';
+import { theme, GlobalStyle } from 'theme';
 
 if (process.env.NODE_ENV !== 'test') {
   addDecorator(storyFn => (
-    <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {storyFn()}
+    </ThemeProvider>
   ));
 }
 
