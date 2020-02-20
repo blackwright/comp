@@ -11,17 +11,11 @@ export const Default = () => <NumberInput placeholder="Number input" />;
 export const MinAndMax = () => (
   <NumberInput placeholder="Within min/max" min={1} max={10} />
 );
-MinAndMax.story = {
-  name: 'Min and max'
-};
 
 export const IsInteger = () => (
   <NumberInput placeholder="Integer only" isInteger={true} />
 );
-IsInteger.story = {
-  name: 'Integer only'
-};
 
 export const Disabled = () => (
-  <NumberInput disabled={true} placeholder="Number input" />
+  <NumberInput disabled={true} placeholder="Disabled" />
 );
