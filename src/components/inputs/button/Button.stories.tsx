@@ -6,12 +6,6 @@ export default {
   component: Button
 };
 
-const handleClick = () => ({});
+export const Default = () => <Button>Button</Button>;
 
-export const Default = () => <Button onClick={handleClick}>Button</Button>;
-
-export const Disabled = () => (
-  <Button onClick={handleClick} disabled={true}>
-    Button
-  </Button>
-);
+export const Disabled = () => <Button disabled={true}>Button</Button>;

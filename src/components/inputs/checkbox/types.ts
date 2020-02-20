@@ -3,9 +3,13 @@ import { AlignItemsProperty } from 'csstype';
 import { LabelProps, VisibleCheckboxProps } from './components';
 
 type TestingProps = {
-  // Label test id
+  /**
+   * Label test id.
+   */
   labelTestId?: string;
-  // Visible checkbox test id
+  /**
+   * Visible checkbox test id.
+   */
   visibleTestId?: string;
 };
 
@@ -16,9 +20,14 @@ export type CustomizableComponents = {
 };
 
 export type Props = {
-  // Flex item alignment
+  /**
+   * Flex item alignment.
+   */
   alignItems?: AlignItemsProperty;
-  // Custom components
+  /**
+   * Custom components.
+   * Renders default components when not provided.
+   */
   components?: Partial<CustomizableComponents>;
 } & TestingProps &
   Omit<ComponentProps<'input'>, 'type'>;

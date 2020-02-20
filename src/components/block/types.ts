@@ -17,31 +17,31 @@ export type Size = number | string;
 // top/right/bottom/left sizing overrides overall and x/y sizing.
 export type PaddingProps = {
   /**
-   * Overall padding size
+   * Overall padding size.
    */
   p?: Size;
   /**
-   * X-axis padding size
+   * X-axis padding size.
    */
   pX?: Size;
   /**
-   * Y-axis padding size
+   * Y-axis padding size.
    */
   pY?: Size;
   /**
-   * Top padding size
+   * Top padding size.
    */
   pTop?: Size;
   /**
-   * Right padding size
+   * Right padding size.
    */
   pRight?: Size;
   /**
-   * Bottom padding size
+   * Bottom padding size.
    */
   pBottom?: Size;
   /**
-   * Left padding size
+   * Left padding size.
    */
   pLeft?: Size;
 };
@@ -50,31 +50,31 @@ export type PaddingProps = {
 // top/right/bottom/left sizing overrides overall and x/y sizing.
 export type MarginProps = {
   /**
-   * Overall padding size
+   * Overall padding size.
    */
   m?: Size;
   /**
-   * X-axis padding size
+   * X-axis padding size.
    */
   mX?: Size;
   /**
-   * Y-axis padding size
+   * Y-axis padding size.
    */
   mY?: Size;
   /**
-   * Top padding size
+   * Top padding size.
    */
   mTop?: Size;
   /**
-   * Right padding size
+   * Right padding size.
    */
   mRight?: Size;
   /**
-   * Bottom padding size
+   * Bottom padding size.
    */
   mBottom?: Size;
   /**
-   * Left padding size
+   * Left padding size.
    */
   mLeft?: Size;
 };
