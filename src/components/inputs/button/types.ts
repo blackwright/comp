@@ -11,12 +11,16 @@ export const sizeStringToPadding = {
     y: theme.sizing.fn(0.5)
   },
   md: {
-    x: theme.sizing.fn(2),
+    x: theme.sizing.fn(2.5),
     y: theme.sizing.fn(1)
   },
   lg: {
-    x: theme.sizing.fn(3),
+    x: theme.sizing.fn(4),
     y: theme.sizing.fn(1.5)
+  },
+  xl: {
+    x: theme.sizing.fn(5.5),
+    y: theme.sizing.fn(2.5)
   }
 };
 
@@ -25,7 +29,7 @@ export type Size = keyof typeof sizeStringToPadding;
 export type Props = {
   /**
    * Determines preset padding size.
-   * @default sm
+   * @default md
    */
   size?: Size;
   /**
