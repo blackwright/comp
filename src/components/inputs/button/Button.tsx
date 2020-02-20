@@ -22,6 +22,7 @@ export const Button = styled(ButtonComponent)<Props>(
     size = 'md',
     color = 'blue6',
     disabled,
+    isFullWidth,
     theme: { sizing, colors, transitions }
   }) => {
     const passiveColor = getBackgroundColor(colors[color], disabled);
@@ -34,6 +35,7 @@ export const Button = styled(ButtonComponent)<Props>(
       color: ${getTextColor(colors[color], disabled).hex};
       border-radius: ${sizing.borderRadius};
       transition: background ${transitions.fast};
+      ${isFullWidth && 'width: 100%;'}
       outline: 0;
       border: 0;
 

@@ -24,7 +24,7 @@ export type Size = keyof typeof sizeStringToPadding;
 
 export type Props = {
   /**
-   * Determines preset padding size
+   * Determines preset padding size.
    * @default sm
    */
   size?: Size;
@@ -34,4 +34,9 @@ export type Props = {
    * @default blue6
    */
   color?: ColorName;
+  /**
+   * Match full width of parent.
+   * @default false
+   */
+  isFullWidth?: boolean;
 } & ComponentProps<'button'>;

@@ -11,7 +11,7 @@ const handleClick = () => ({});
 export const Default = () => <Button onClick={handleClick}>Button</Button>;
 
 export const Disabled = () => (
-  <Button onClick={handleClick} isDisabled={true}>
+  <Button onClick={handleClick} disabled={true}>
     Button
   </Button>
 );
