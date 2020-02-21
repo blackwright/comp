@@ -17,7 +17,7 @@ export const IsInteger = () => (
 );
 
 export const FullWidth = () => (
-  <div style={{ width: '100%', padding: '8px', background: 'pink' }}>
+  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
     <NumberInput placeholder="Full width" isFullWidth={true} />
   </div>
 );

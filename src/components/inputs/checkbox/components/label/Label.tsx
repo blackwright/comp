@@ -14,10 +14,10 @@ const LabelComponent: React.FC<Props> = ({
 );
 
 export const Label = styled(LabelComponent)(
-  ({ alignItems }) => css`
+  ({ alignItems, theme: { sizing } }) => css`
     align-items: ${alignItems};
+    line-height: ${sizing.fn(2)}px;
     display: flex;
     flex-flow: row nowrap;
-    line-height: 24px;
   `
 );

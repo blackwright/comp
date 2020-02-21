@@ -21,9 +21,11 @@ export const Default = () => (
 
 export const Alignment = () =>
   ['flex-start', 'center', 'flex-end'].map(alignment => (
-    <Checkbox key={alignment} alignItems={alignment}>
-      <Description title={alignment} />
-    </Checkbox>
+    <div key={alignment} style={{ marginBottom: '8px' }}>
+      <Checkbox alignItems={alignment}>
+        <Description title={alignment} />
+      </Checkbox>
+    </div>
   ));
 
 export const Disabled = () => (

@@ -13,7 +13,7 @@ export const FitContents = () => (
 );
 
 export const FullWidth = () => (
-  <div style={{ width: '200px', padding: '8px', background: 'pink' }}>
+  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
     <TextArea placeholder="Full width" isFullWidth={true} />
   </div>
 );

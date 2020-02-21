@@ -9,7 +9,7 @@ export default {
 export const Default = () => <Input placeholder="Input" />;
 
 export const FullWidth = () => (
-  <div style={{ width: '200px', padding: '8px', background: 'pink' }}>
+  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
     <Input placeholder="Full width" isFullWidth={true} />
   </div>
 );

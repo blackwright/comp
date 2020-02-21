@@ -25,7 +25,7 @@ const Block = styled.div`
 `;
 
 export const FullWidth = () => (
-  <div style={{ width: '200px', padding: '8px', background: 'pink' }}>
+  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
     <Button isFullWidth={true}>Full width</Button>
   </div>
 );
