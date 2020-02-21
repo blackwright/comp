@@ -39,7 +39,7 @@ export type Props = {
    */
   color?: ColorName;
   /**
-   * Match full width of parent.
+   * Match parent width.
    * @default false
    */
   isFullWidth?: boolean;

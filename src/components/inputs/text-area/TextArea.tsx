@@ -1,9 +1,11 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 import { Props } from './types';
 import { mergeRefs } from 'utils';
 import { resize } from './utils';
+import { typeableInputStyle } from '../shared';
 
-export const TextArea: React.FC<Props> = React.forwardRef(
+export const TextAreaComponent: React.FC<Props> = React.forwardRef(
   (
     { testId, value, fitContents, onChange, disabled, ...rest },
     ref: React.Ref<HTMLTextAreaElement>
@@ -41,7 +43,14 @@ export const TextArea: React.FC<Props> = React.forwardRef(
   }
 );
 
-TextArea.defaultProps = {
+TextAreaComponent.defaultProps = {
   testId: 'text-area',
   fitContents: false
 };
+
+export const TextArea = styled(TextAreaComponent)(
+  ({ theme, isFullWidth, disabled, fitContents, isResizable }) => css`
+    ${typeableInputStyle(theme, isFullWidth, disabled)}
+    ${(fitContents || isResizable === false) && 'resize: none;'}
+  `
+);

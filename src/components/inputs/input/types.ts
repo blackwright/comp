@@ -4,7 +4,7 @@ import { ComponentProps } from 'types';
 export type Props = {
   ref?: Ref<HTMLInputElement>;
   /**
-   * Match full width of parent.
+   * Match parent width.
    * @default false
    */
   isFullWidth?: boolean;

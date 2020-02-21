@@ -8,10 +8,10 @@ export default {
 
 export const Default = () => <Input placeholder="Input" />;
 
-export const Disabled = () => <Input disabled={true} placeholder="Disabled" />;
-
 export const FullWidth = () => (
-  <div style={{ width: '200px', padding: '10px', background: 'teal' }}>
-    <Input placeholder="Full width of parent" isFullWidth={true} />
+  <div style={{ width: '200px', padding: '8px', background: 'pink' }}>
+    <Input placeholder="Full width" isFullWidth={true} />
   </div>
 );
+
+export const Disabled = () => <Input disabled={true} placeholder="Disabled" />;

@@ -24,4 +24,10 @@ const Block = styled.div`
   margin-bottom: ${({ theme }) => theme.sizing.fn()}px;
 `;
 
+export const FullWidth = () => (
+  <div style={{ width: '200px', padding: '8px', background: 'pink' }}>
+    <Button isFullWidth={true}>Full width</Button>
+  </div>
+);
+
 export const Disabled = () => <Button disabled={true}>Button</Button>;

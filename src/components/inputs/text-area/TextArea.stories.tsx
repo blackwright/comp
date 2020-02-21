@@ -11,10 +11,13 @@ export const Default = () => <TextArea placeholder="Text area" />;
 export const FitContents = () => (
   <TextArea placeholder="Text area" fitContents={true} />
 );
-FitContents.story = {
-  name: 'Fit contents'
-};
+
+export const FullWidth = () => (
+  <div style={{ width: '200px', padding: '8px', background: 'pink' }}>
+    <TextArea placeholder="Full width" isFullWidth={true} />
+  </div>
+);
 
 export const Disabled = () => (
-  <TextArea placeholder="Text area" disabled={true} />
+  <TextArea placeholder="Disabled" disabled={true} />
 );

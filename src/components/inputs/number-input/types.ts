@@ -1,4 +1,4 @@
-import { ComponentProps } from 'types';
+import { Props as InputProps } from '../input/types';
 
 export type Props = {
   /**
@@ -24,4 +24,4 @@ export type Props = {
    * Floats are coerced into integers.
    */
   isInteger?: boolean;
-} & Omit<ComponentProps<'input'>, 'value' | 'min' | 'max' | 'onChange'>;
+} & Omit<InputProps, 'value' | 'min' | 'max' | 'onChange'>;

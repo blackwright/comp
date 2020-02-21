@@ -16,6 +16,12 @@ export const IsInteger = () => (
   <NumberInput placeholder="Integer only" isInteger={true} />
 );
 
+export const FullWidth = () => (
+  <div style={{ width: '100%', padding: '8px', background: 'pink' }}>
+    <NumberInput placeholder="Full width" isFullWidth={true} />
+  </div>
+);
+
 export const Disabled = () => (
   <NumberInput disabled={true} placeholder="Disabled" />
 );
