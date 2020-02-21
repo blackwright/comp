@@ -1,5 +1,11 @@
 import { ComponentProps } from 'types';
 import { theme } from 'theme';
+import {
+  AlignItemsProperty,
+  JustifyContentProperty,
+  FlexFlowProperty,
+  FlexProperty
+} from 'csstype';
 
 export const sizeStringToNumberValue = {
   xs: theme.sizing.fn(1),
@@ -12,6 +18,29 @@ export const sizeStringToNumberValue = {
 export type MappedSize = keyof typeof sizeStringToNumberValue;
 
 export type Size = number | string;
+
+type FlexProps = {
+  /**
+   * flex property.
+   * @default '1 1 0'
+   */
+  flex?: FlexProperty<1 | 2 | 3>;
+  /**
+   * flex-flow property.
+   * @default 'row wrap'
+   */
+  flow?: FlexFlowProperty;
+  /**
+   * align-items property.
+   * @default 'stretch'
+   */
+  alignItems?: AlignItemsProperty;
+  /**
+   * justify-content property.
+   * @default 'flex-start'
+   */
+  justifyContent?: JustifyContentProperty;
+};
 
 // x/y sizing overrides overall sizing.
 // top/right/bottom/left sizing overrides overall and x/y sizing.
@@ -79,4 +108,6 @@ export type MarginProps = {
   mLeft?: Size;
 };
 
-export type Props = ComponentProps<'div'> & PaddingProps & MarginProps;
+export type SpacingProps = PaddingProps & MarginProps;
+
+export type Props = ComponentProps<'div'> & FlexProps & SpacingProps;

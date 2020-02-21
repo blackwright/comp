@@ -8,7 +8,7 @@ export default {
   component: Block
 };
 
-export const SizePresets = () => (
+export const Sizing = () => (
   <>
     {(Object.keys(sizeStringToNumberValue) as MappedSize[]).map(size => (
       <MarginBlock key={size} p={size}>
@@ -39,14 +39,14 @@ const PaddingBlock = styled(Block)(
   `
 );
 
-const BorderBlock = styled.div(
+const BorderBlock = styled(Block)(
   ({ theme: { colors } }) => css`
     background-color: ${colors.yellow3.hex};
     padding: 5px;
   `
 );
 
-const TextBlock = styled.div(
+const TextBlock = styled(Block)(
   ({ theme: { sizing, colors } }) => css`
     padding: ${sizing.fn(1)}px;
     background-color: ${colors.blue2.hex};

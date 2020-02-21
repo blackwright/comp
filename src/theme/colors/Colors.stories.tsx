@@ -28,7 +28,7 @@ export const Colors = () => (
             const textColor = isBright(value) ? 'dark4' : 'light1';
 
             return (
-              <ColorSwatch background={hex}>
+              <ColorSwatch background={hex} p="sm" flow="column nowrap">
                 <Typography as="div" variant="header5" color={textColor}>
                   {name}
                 </Typography>
@@ -55,13 +55,9 @@ const SwatchContainer = styled.div`
   grid-row-gap: 0px;
 `;
 
-const ColorSwatch = styled.div<{ background: string }>(
+const ColorSwatch = styled(Block)<{ background: string }>(
   ({ background, theme }) => css`
     background: ${background};
-    padding: 0 ${theme.sizing.fn(2)}px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 100px;
     overflow: hidden;
   `

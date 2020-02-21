@@ -8,29 +8,39 @@ import {
 
 export const Block = styled.div.attrs<Props>(({ testId }) => ({
   'data-testid': testId
-}))<Props>(props => {
-  let css = '';
+}))<Props>(({ flex, flow, alignItems, justifyContent, ...spacing }) => {
+  let css = `
+    display: flex;
+    flex: ${flex};
+    flex-flow: ${flow};
+    align-items: ${alignItems};
+    justify-content: ${justifyContent};
+  `;
 
-  if ('p' in props) {
-    css += `padding: ${getSizeValue(props.p)};`;
-  } else if ('pX' in props || 'pY' in props) {
-    css += `padding: ${getSizeValue(props.pY)} ${getSizeValue(props.pX)};`;
+  if ('p' in spacing) {
+    css += `padding: ${getSizeValue(spacing.p)};`;
+  } else if ('pX' in spacing || 'pY' in spacing) {
+    css += `padding: ${getSizeValue(spacing.pY)} ${getSizeValue(spacing.pX)};`;
   }
 
-  if ('m' in props) {
-    css += `margin: ${getSizeValue(props.m)};`;
-  } else if ('mX' in props || 'mY' in props) {
-    css += `margin: ${getSizeValue(props.mY)} ${getSizeValue(props.mX)};`;
+  if ('m' in spacing) {
+    css += `margin: ${getSizeValue(spacing.m)};`;
+  } else if ('mX' in spacing || 'mY' in spacing) {
+    css += `margin: ${getSizeValue(spacing.mY)} ${getSizeValue(spacing.mX)};`;
   }
 
   css += `
-    ${appendIndividualPaddings(props)}
-    ${appendIndividualMargins(props)}
+    ${appendIndividualPaddings(spacing)}
+    ${appendIndividualMargins(spacing)}
   `;
 
   return css;
 });
 
 Block.defaultProps = {
-  testId: 'block'
+  testId: 'block',
+  flex: '1 1 0',
+  flow: 'row nowrap',
+  alignItems: 'stretch',
+  justifyContent: 'flex-start'
 };

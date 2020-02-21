@@ -1,4 +1,9 @@
-import { Size, Props, sizeStringToNumberValue, MappedSize } from './types';
+import {
+  Size,
+  SpacingProps,
+  sizeStringToNumberValue,
+  MappedSize
+} from './types';
 
 export function getSizeValue(size?: Size): string {
   if (size == null) {
@@ -19,7 +24,7 @@ export function getSizeValue(size?: Size): string {
   return size;
 }
 
-export function appendIndividualPaddings(props: Props) {
+export function appendIndividualPaddings(props: SpacingProps) {
   let css = '';
 
   if (props.pTop) {
@@ -38,7 +43,7 @@ export function appendIndividualPaddings(props: Props) {
   return css;
 }
 
-export function appendIndividualMargins(props: Props) {
+export function appendIndividualMargins(props: SpacingProps) {
   let css = '';
 
   if (props.mTop) {

@@ -1,7 +1,9 @@
 import React from 'react';
 
 export type TestingProps = {
-  // Value of data-testid HTML attribute
+  /**
+   * Value of data-testid HTML attribute
+   */
   testId?: string;
 };
 
