@@ -12,6 +12,7 @@ export const RadioComponent: React.FC<RadioProps> = ({
   className,
   value,
   checked,
+  disabled,
   children,
   ...rest
 }) => {
@@ -37,6 +38,8 @@ export const RadioComponent: React.FC<RadioProps> = ({
     Description: components.Description ?? Description
   };
 
+  const internalDisabled = !!(disabled || context.disabled);
+
   return (
     <Components.Label
       data-testid={labelTestId}
@@ -50,12 +53,14 @@ export const RadioComponent: React.FC<RadioProps> = ({
         value={value}
         checked={isMatchingValue}
         onChange={handleChange}
+        disabled={internalDisabled}
         {...rest}
       />
       <Components.VisibleRadio
         data-testid={visibleTestId}
         isHovered={isHovered}
         checked={isMatchingValue}
+        disabled={internalDisabled}
       />
       <Components.Description>{children}</Components.Description>
     </Components.Label>

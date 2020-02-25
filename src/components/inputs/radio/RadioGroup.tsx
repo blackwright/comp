@@ -6,6 +6,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
   value,
   name,
   onChange,
+  disabled,
   children
 }) => {
   const [stateValue, setStateValue] = React.useState<any>(value ?? null);
@@ -27,6 +28,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
       value={{
         value: stateValue,
         setValue: handleChange,
+        disabled,
         name
       }}
     >

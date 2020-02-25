@@ -33,7 +33,8 @@ export const VisibleRadio = styled(VisibleRadioComponent)(
     width: ${sizing.fn(2)}px;
     height: ${sizing.fn(2)}px;
     margin-right: ${sizing.fn()}px;
-    border: 1px solid ${colors.blue3.hex};
+    border: 1px solid
+      ${disabled ? colors.background.disabled.hex : colors.blue3.hex};
     background: ${checked ? colors.background.action.hex : colors.white.hex};
     transition: all ${transitions.fast};
     border-radius: 50%;
