@@ -9,7 +9,6 @@ const VisibleCheckboxComponent: React.FC<Props> = ({ className }) => (
   </div>
 );
 
-// Wrap in styled factory to allow component selector CSS rule
 const CheckIcon = styled(FaCheck)(
   ({ theme: { sizing } }) => css`
     width: ${sizing.fn(1.5)}px;
@@ -29,7 +28,8 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
     width: ${sizing.fn(2)}px;
     height: ${sizing.fn(2)}px;
     margin-right: ${sizing.fn()}px;
-    border: 1px solid ${colors.blue3.hex};
+    border: 1px solid
+      ${disabled ? colors.background.disabled.hex : colors.blue3.hex};
     transition: all ${transitions.slow};
     background: ${checked ? colors.background.action.hex : colors.white.hex};
     display: flex;
@@ -44,8 +44,13 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
 
     ${isHovered &&
       !disabled &&
-      css`
+      `
         border-color: ${colors.background.action.hex};
       `}
+
+    ${disabled &&
+      `
+      background: ${colors.background.disabled.hex};
+    `}
   `
 );
