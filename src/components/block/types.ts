@@ -79,31 +79,31 @@ export type PaddingProps = {
 // top/right/bottom/left sizing overrides overall and x/y sizing.
 export type MarginProps = {
   /**
-   * Overall padding size.
+   * Overall margin size.
    */
   m?: Size;
   /**
-   * X-axis padding size.
+   * X-axis margin size.
    */
   mX?: Size;
   /**
-   * Y-axis padding size.
+   * Y-axis margin size.
    */
   mY?: Size;
   /**
-   * Top padding size.
+   * Top margin size.
    */
   mTop?: Size;
   /**
-   * Right padding size.
+   * Right margin size.
    */
   mRight?: Size;
   /**
-   * Bottom padding size.
+   * Bottom margin size.
    */
   mBottom?: Size;
   /**
-   * Left padding size.
+   * Left margin size.
    */
   mLeft?: Size;
 };
