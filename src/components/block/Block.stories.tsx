@@ -11,10 +11,10 @@ export default {
 export const Sizing = () => (
   <>
     {(Object.keys(sizeStringToNumberValue) as MappedSize[]).map(size => (
-      <MarginBlock key={size} p={size}>
-        <BorderBlock>
+      <MarginBlock key={size} p={size} mBottom="xs">
+        <BorderBlock p={5}>
           <PaddingBlock p={size}>
-            <TextBlock>
+            <TextBlock p="xs" justifyContent="center">
               {size}: {sizeStringToNumberValue[size]}px
             </TextBlock>
           </PaddingBlock>
@@ -42,13 +42,11 @@ const PaddingBlock = styled(Block)(
 const BorderBlock = styled(Block)(
   ({ theme: { colors } }) => css`
     background-color: ${colors.yellow3.hex};
-    padding: 5px;
   `
 );
 
 const TextBlock = styled(Block)(
-  ({ theme: { sizing, colors } }) => css`
-    padding: ${sizing.fn(1)}px;
+  ({ theme: { colors } }) => css`
     background-color: ${colors.blue2.hex};
     border: 1px dashed ${colors.dark3.hex};
     text-align: center;
