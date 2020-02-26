@@ -4,7 +4,7 @@ import { Button } from './index';
 import { sizeStringToPadding, Size } from './types';
 
 export default {
-  title: 'Inputs/Button',
+  title: 'Input/Button',
   component: Button
 };
 

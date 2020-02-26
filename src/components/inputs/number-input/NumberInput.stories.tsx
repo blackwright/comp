@@ -2,7 +2,7 @@ import React from 'react';
 import { NumberInput } from './NumberInput';
 
 export default {
-  title: 'Inputs/NumberInput',
+  title: 'Input/NumberInput',
   component: NumberInput
 };
 

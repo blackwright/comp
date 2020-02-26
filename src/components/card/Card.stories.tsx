@@ -3,7 +3,7 @@ import { Card } from './Card';
 import { shadows, ShadowName } from 'theme/shadows';
 
 export default {
-  title: 'Card',
+  title: 'Layout/Card',
   component: Card
 };
 

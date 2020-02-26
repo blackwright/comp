@@ -3,7 +3,7 @@ import { Typography, Variant } from './index';
 import { theme } from 'theme';
 
 export default {
-  title: 'Typography',
+  title: 'Design System/Typography',
   component: Typography
 };
 

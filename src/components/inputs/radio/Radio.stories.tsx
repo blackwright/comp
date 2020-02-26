@@ -3,7 +3,7 @@ import { RadioGroup } from './RadioGroup';
 import { Radio } from './Radio';
 
 export default {
-  title: 'Inputs/Radio',
+  title: 'Input/Radio',
   component: RadioGroup
 };
 

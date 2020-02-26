@@ -10,7 +10,11 @@ export type Props = {
   shadow?: ShadowName;
   /**
    * Color from theme.
-   * @default white
    */
   color?: ColorName;
+  /**
+   * Background color from theme.
+   * @default white
+   */
+  background?: ColorName;
 } & BlockProps;

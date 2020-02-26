@@ -2,7 +2,7 @@ import React from 'react';
 import { MatchMedia } from './MatchMedia';
 
 export default {
-  title: 'MatchMedia',
+  title: 'Util/MatchMedia',
   component: MatchMedia
 };
 

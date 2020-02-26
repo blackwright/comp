@@ -5,7 +5,7 @@ import { colors } from './index';
 import { isBright } from './utils';
 
 export default {
-  title: 'Colors'
+  title: 'Design System/Colors'
 };
 
 export const Colors = () => (

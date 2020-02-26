@@ -4,7 +4,7 @@ import { Block } from './Block';
 import { sizeStringToNumberValue, MappedSize } from './types';
 
 export default {
-  title: 'Block',
+  title: 'Layout/Block',
   component: Block
 };
 

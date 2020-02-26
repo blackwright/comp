@@ -3,8 +3,14 @@ import { Block } from '../block';
 import { Props } from './types';
 
 export const Card = styled(Block)<Props>(
-  ({ shadow = 'md', color = 'white', theme: { colors, shadows } }) => css`
-    background: ${colors[color].hex};
+  ({
+    shadow = 'md',
+    background = 'white',
+    color,
+    theme: { colors, shadows }
+  }) => css`
+    color: ${color ? colors[color].hex : 'inherit'};
+    background: ${colors[background].hex};
     box-shadow: ${shadows[shadow]};
   `
 );
@@ -12,5 +18,5 @@ export const Card = styled(Block)<Props>(
 Card.defaultProps = {
   testId: 'card',
   shadow: 'md',
-  color: 'white'
+  background: 'white'
 };
