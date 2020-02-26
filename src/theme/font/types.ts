@@ -4,20 +4,20 @@ type Name =
   | 'header3'
   | 'header4'
   | 'header5'
-  | 'subtitle1'
-  | 'subtitle2'
   | 'paragraph'
-  | 'small'
+  | 'normal'
+  | 'subtitle'
+  | 'heavyCaps'
   | 'smallCaps'
-  | 'feather'
-  | 'normal';
+  | 'small'
+  | 'feather';
 
 type Value = {
   size: string;
   height: string;
   family: string;
   weight: number;
-  sizing: string;
+  spacing: string;
   transform: string;
 };
 

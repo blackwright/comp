@@ -2,7 +2,7 @@ import { Variants } from './types';
 
 const family = 'Roboto, Arial, sans-serif';
 const weight = 400;
-const sizing = 'normal';
+const spacing = 'normal';
 const transform = 'none';
 
 const defaults = {
@@ -10,59 +10,71 @@ const defaults = {
   height: '1.25rem',
   family,
   weight,
-  sizing,
+  spacing,
   transform
 };
 
 export const variants: Variants = {
   header1: {
     ...defaults,
-    size: '2rem',
-    height: '2.5rem',
+    size: '3rem',
+    height: '3.5rem',
     weight: weight * 1.5
   },
 
   header2: {
     ...defaults,
-    size: '1.75rem',
-    height: '2rem'
+    size: '2.75rem',
+    height: '3rem'
   },
 
   header3: {
     ...defaults,
-    size: '1.5rem',
-    height: '1.5rem'
+    size: '2rem',
+    height: '2.25rem'
   },
 
   header4: {
     ...defaults,
-    size: '1.25rem',
-    height: '1.25rem'
+    size: '1.75rem',
+    height: '2rem'
   },
 
   header5: {
     ...defaults,
-    size: '1.1rem',
-    height: '1.25rem'
-  },
-
-  subtitle1: {
-    ...defaults,
-    height: '1.5rem'
-  },
-
-  subtitle2: {
-    ...defaults,
-    size: '0.75rem',
-    height: '1.25rem',
-    weight: weight * 1.5,
-    sizing: 0.03 + 'em',
-    transform: 'uppercase'
+    size: '1.5rem',
+    height: '1.75rem'
   },
 
   paragraph: {
     ...defaults,
-    height: '1.25rem'
+    height: '1.5rem'
+  },
+
+  normal: {
+    ...defaults
+  },
+
+  subtitle: {
+    ...defaults,
+    size: '0.8rem',
+    height: '1.5rem'
+  },
+
+  heavyCaps: {
+    ...defaults,
+    size: '0.75rem',
+    height: '1.25rem',
+    weight: weight * 1.5,
+    spacing: 0.08 + 'em',
+    transform: 'uppercase'
+  },
+
+  smallCaps: {
+    ...defaults,
+    size: '0.75rem',
+    spacing: 0.06 + 'em',
+    transform: 'uppercase'
   },
 
   small: {
@@ -70,19 +82,9 @@ export const variants: Variants = {
     size: '0.75rem'
   },
 
-  smallCaps: {
-    ...defaults,
-    size: '0.75rem',
-    transform: 'uppercase'
-  },
-
   feather: {
     ...defaults,
     size: '0.75rem',
     weight: weight * 0.5
-  },
-
-  normal: {
-    ...defaults
   }
 };

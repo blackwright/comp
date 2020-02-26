@@ -19,7 +19,7 @@ export const Typography = styled.span.attrs<Props>(({ testId }) => ({
     font-size: ${font.size};
     font-weight: ${font.weight};
     line-height: ${font.height};
-    letter-sizing: ${font.sizing};
+    letter-spacing: ${font.spacing};
     text-transform: ${font.transform};
     color: ${colorCSS};
   `;
