@@ -3,8 +3,8 @@ import { font } from './font';
 import { colors } from './colors';
 import { transitions } from './transitions';
 import { shadows } from './shadows';
+import { ColorName as _ColorName } from './colors';
 
-export { ColorName } from './colors';
 export { GlobalStyle } from './GlobalStyle';
 
 export const theme = {
@@ -15,4 +15,5 @@ export const theme = {
   shadows
 };
 
+export type ColorName = _ColorName;
 export type Theme = typeof theme;

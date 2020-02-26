@@ -22,7 +22,7 @@ export const Colors = () => (
       'purples',
       'monochrome'
     ] as Array<keyof typeof colors.byHue>).map(colorGroup => (
-      <SwatchContainer>
+      <SwatchContainer key={colorGroup}>
         {Object.entries(colors.byHue[colorGroup]).map(
           ([name, { value, hex, rgb }]) => {
             const textColor = isBright(value) ? 'dark4' : 'light1';

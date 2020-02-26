@@ -1,2 +1,2 @@
 export { TextArea } from './TextArea';
-export { Props } from './types';
+export * from './types';
