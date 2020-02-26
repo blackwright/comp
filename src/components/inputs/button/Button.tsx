@@ -6,12 +6,13 @@ import { sizeStringToPadding } from './types';
 import { getBackgroundColor, getTextColor } from './utils';
 
 export const ButtonComponent: React.FC<Props> = React.forwardRef(
-  ({ testId, ...rest }, ref: React.Ref<HTMLButtonElement>) => {
+  ({ testId, isFullWidth, ...rest }, ref: React.Ref<HTMLButtonElement>) => {
     return <button data-testid={testId} ref={ref} {...rest} />;
   }
 );
 
 ButtonComponent.defaultProps = {
+  testId: 'button',
   type: 'submit',
   size: 'md',
   color: 'blue6'
