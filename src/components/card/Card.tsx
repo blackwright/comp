@@ -7,11 +7,12 @@ export const Card = styled(Block)<Props>(
     shadow = 'md',
     background = 'white',
     color,
-    theme: { colors, shadows }
+    theme: { colors, shadows, sizing }
   }) => css`
     color: ${color ? colors[color].hex : 'inherit'};
     background: ${colors[background].hex};
     box-shadow: ${shadows[shadow]};
+    border-radius: ${sizing.borderRadius};
   `
 );
 
