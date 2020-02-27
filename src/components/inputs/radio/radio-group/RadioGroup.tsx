@@ -1,8 +1,8 @@
 import React from 'react';
-import { Context } from './context';
-import { RadioGroupProps } from './types';
+import { Context } from '../context';
+import { Props } from './types';
 
-export const RadioGroup: React.FC<RadioGroupProps> = ({
+export const RadioGroup: React.FC<Props> = ({
   value,
   name,
   onChange,

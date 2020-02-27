@@ -1,9 +1,9 @@
 import React from 'react';
 import { Label, HiddenRadio, VisibleRadio, Description } from './components';
-import { Context } from './context';
-import { RadioProps } from './types';
+import { Context } from '../context';
+import { Props } from './types';
 
-export const Radio: React.FC<RadioProps> = React.forwardRef(
+export const Radio: React.FC<Props> = React.forwardRef(
   (
     {
       components = {},

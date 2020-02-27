@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { RadioGroup } from './RadioGroup';
-import { Radio } from './Radio';
+import { RadioGroup } from './radio-group';
+import { Radio } from './radio';
 
 export default {
   title: 'Input/Radio',
