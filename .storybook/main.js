@@ -12,6 +12,7 @@ module.exports = {
       options: {
         configureJSX: true
       }
-    }
+    },
+    '@storybook/addon-knobs/register'
   ]
 };
