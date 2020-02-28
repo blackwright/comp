@@ -1,20 +1,25 @@
 import * as React from 'react';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import { Card } from './Card';
-import { shadows, ShadowName } from 'theme/shadows';
+import { shadows as themeShadows, ShadowName } from 'theme/shadows';
+import { createKnobsSelectOptions } from 'utils';
 
 export default {
   title: 'Layout/Card',
-  component: Card
+  component: Card,
+  decorators: [withKnobs]
 };
 
-export const Shadows = (Object.keys(shadows) as ShadowName[]).map(shadow => (
-  <Card
-    key={shadow}
-    shadow={shadow}
-    p="md"
-    mBottom="sm"
-    justifyContent="center"
-  >
-    {shadow}
-  </Card>
-));
+export const Default = () => {
+  const shadowOptions = createKnobsSelectOptions(
+    Object.keys(themeShadows) as ShadowName[]
+  );
+
+  const shadow = select('shadow', shadowOptions, 'md');
+
+  return (
+    <Card shadow={shadow} p="md" mBottom="sm" justifyContent="center">
+      Content
+    </Card>
+  );
+};

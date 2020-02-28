@@ -17,16 +17,32 @@ export const Block = styled.div.attrs<Props>(({ testId }) => ({
     justify-content: ${justifyContent};
   `;
 
-  if ('p' in spacing) {
+  if (spacing.p != null) {
     css += `padding: ${getSizeValue(spacing.p)};`;
-  } else if ('pX' in spacing || 'pY' in spacing) {
-    css += `padding: ${getSizeValue(spacing.pY)} ${getSizeValue(spacing.pX)};`;
+  }
+  if (spacing.pX != null) {
+    const value = getSizeValue(spacing.pX);
+    css += `padding-left: ${value};`;
+    css += `padding-right: ${value};`;
+  }
+  if (spacing.pY != null) {
+    const value = getSizeValue(spacing.pY);
+    css += `padding-top: ${value};`;
+    css += `padding-bottom: ${value};`;
   }
 
-  if ('m' in spacing) {
+  if (spacing.m != null) {
     css += `margin: ${getSizeValue(spacing.m)};`;
-  } else if ('mX' in spacing || 'mY' in spacing) {
-    css += `margin: ${getSizeValue(spacing.mY)} ${getSizeValue(spacing.mX)};`;
+  }
+  if (spacing.mX != null) {
+    const value = getSizeValue(spacing.mX);
+    css += `margin-left: ${value};`;
+    css += `margin-right: ${value};`;
+  }
+  if (spacing.mY != null) {
+    const value = getSizeValue(spacing.mY);
+    css += `margin-top: ${value};`;
+    css += `margin-bottom: ${value};`;
   }
 
   css += `

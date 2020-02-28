@@ -11,7 +11,7 @@ export const Card = styled(Block)<Props>(
   }) => css`
     color: ${color ? colors[color].hex : 'inherit'};
     background: ${colors[background].hex};
-    box-shadow: ${shadows[shadow]};
+    box-shadow: ${shadows[shadow] ?? shadows.md};
     border-radius: ${sizing.borderRadius};
   `
 );

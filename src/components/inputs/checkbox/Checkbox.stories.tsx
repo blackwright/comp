@@ -1,35 +1,26 @@
 import React from 'react';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { Checkbox } from './index';
 
 export default {
   title: 'Input/Checkbox',
-  component: Checkbox
+  component: Checkbox,
+  decorators: [withKnobs]
 };
 
-const Description = ({ title }: { title: string }) => (
-  <>
-    <span>{title}</span>
-    <small>Some descriptive text explaining what this checkbox does</small>
-  </>
-);
+export const Default = () => {
+  const checked = boolean('checked', false);
+  const alignItems = select(
+    'alignItems',
+    ['flex-start', 'center', 'flex-end'],
+    'flex-start'
+  );
+  const disabled = boolean('disabled', false);
+  const children = text('children', 'Label');
 
-export const Default = () => (
-  <Checkbox>
-    <Description title="Description" />
-  </Checkbox>
-);
-
-export const Alignment = () =>
-  ['flex-start', 'center', 'flex-end'].map(alignment => (
-    <div key={alignment} style={{ marginBottom: '8px' }}>
-      <Checkbox alignItems={alignment}>
-        <Description title={alignment} />
-      </Checkbox>
-    </div>
-  ));
-
-export const Disabled = () => (
-  <Checkbox disabled={true}>
-    <Description title="Disabled" />
-  </Checkbox>
-);
+  return (
+    <Checkbox checked={checked} alignItems={alignItems} disabled={disabled}>
+      {children}
+    </Checkbox>
+  );
+};

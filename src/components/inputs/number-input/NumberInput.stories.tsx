@@ -1,27 +1,29 @@
 import React from 'react';
+import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
 import { NumberInput } from './NumberInput';
 
 export default {
   title: 'Input/NumberInput',
-  component: NumberInput
+  component: NumberInput,
+  decorators: [withKnobs]
 };
 
-export const Default = () => <NumberInput placeholder="Number input" />;
+export const Default = () => {
+  const placeholder = text('placeholder', 'Number input');
+  const min = number('min', 1);
+  const max = number('max', 10);
+  const isInteger = boolean('isInteger', true);
+  const isFullWidth = boolean('isFullWidth', false);
+  const disabled = boolean('disabled', false);
 
-export const MinAndMax = () => (
-  <NumberInput placeholder="Within min/max" min={1} max={10} />
-);
-
-export const IsInteger = () => (
-  <NumberInput placeholder="Integer only" isInteger={true} />
-);
-
-export const FullWidth = () => (
-  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
-    <NumberInput placeholder="Full width" isFullWidth={true} />
-  </div>
-);
-
-export const Disabled = () => (
-  <NumberInput disabled={true} placeholder="Disabled" />
-);
+  return (
+    <NumberInput
+      placeholder={placeholder}
+      min={min}
+      max={max}
+      isInteger={isInteger}
+      isFullWidth={isFullWidth}
+      disabled={disabled}
+    />
+  );
+};

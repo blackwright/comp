@@ -1,17 +1,23 @@
 import React from 'react';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { Input } from './Input';
 
 export default {
   title: 'Input/Input',
-  component: Input
+  component: Input,
+  decorators: [withKnobs]
 };
 
-export const Default = () => <Input placeholder="Input" />;
+export const Default = () => {
+  const placeholder = text('placeholder', 'Input');
+  const isFullWidth = boolean('isFullWidth', false);
+  const disabled = boolean('disabled', false);
 
-export const FullWidth = () => (
-  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
-    <Input placeholder="Full width" isFullWidth={true} />
-  </div>
-);
-
-export const Disabled = () => <Input disabled={true} placeholder="Disabled" />;
+  return (
+    <Input
+      placeholder={placeholder}
+      disabled={disabled}
+      isFullWidth={isFullWidth}
+    />
+  );
+};

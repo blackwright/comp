@@ -1,34 +1,81 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 import { Block } from './Block';
 import { sizeStringToNumberValue, MappedSize } from './types';
+import { createKnobsSelectOptions } from 'utils';
 
 export default {
   title: 'Layout/Block',
-  component: Block
+  component: Block,
+  decorators: [withKnobs]
 };
 
-export const Sizing = () => (
-  <>
-    {(Object.keys(sizeStringToNumberValue) as MappedSize[]).map(size => (
-      <MarginBlock key={size} p={size} mBottom="xs">
-        <BorderBlock p={5}>
-          <PaddingBlock p={size}>
-            <TextBlock p="xs" justifyContent="center">
-              {size}: {sizeStringToNumberValue[size]}px
-            </TextBlock>
-          </PaddingBlock>
-        </BorderBlock>
-      </MarginBlock>
-    ))}
-  </>
-);
+export const Default = () => {
+  const flex = text('flex', '1 1 auto');
+  const flow = text('flow', 'row nowrap');
+
+  const flexAlignments = ['center', 'flex-start', 'flex-end', 'normal'];
+
+  const justifyContent = select('justifyContent', flexAlignments, 'center');
+
+  const boxSizes = createKnobsSelectOptions(
+    Object.keys(sizeStringToNumberValue) as MappedSize[]
+  );
+
+  const m = select('m', boxSizes, 'md');
+  const mX = select('mX', boxSizes, undefined);
+  const mY = select('mY', boxSizes, undefined);
+  const mTop = select('mTop', boxSizes, undefined);
+  const mRight = select('mRight', boxSizes, undefined);
+  const mBottom = select('mBottom', boxSizes, undefined);
+  const mLeft = select('mLeft', boxSizes, undefined);
+  const p = select('p', boxSizes, 'md');
+  const pX = select('pX', boxSizes, undefined);
+  const pY = select('pY', boxSizes, undefined);
+  const pTop = select('pTop', boxSizes, undefined);
+  const pRight = select('pRight', boxSizes, undefined);
+  const pBottom = select('pBottom', boxSizes, undefined);
+  const pLeft = select('pLeft', boxSizes, undefined);
+
+  return (
+    <MarginBlock
+      p={m}
+      pX={mX}
+      pY={mY}
+      pTop={mTop}
+      pRight={mRight}
+      pBottom={mBottom}
+      pLeft={mLeft}
+    >
+      <BorderBlock p={5}>
+        <PaddingBlock
+          p={p}
+          pX={pX}
+          pY={pY}
+          pTop={pTop}
+          pRight={pRight}
+          pBottom={pBottom}
+          pLeft={pLeft}
+        >
+          <TextBlock
+            p="xs"
+            flex={flex}
+            flow={flow}
+            justifyContent={justifyContent}
+          >
+            Content
+          </TextBlock>
+        </PaddingBlock>
+      </BorderBlock>
+    </MarginBlock>
+  );
+};
 
 const MarginBlock = styled(Block)(
-  ({ theme: { sizing, colors } }) => css`
+  ({ theme: { colors } }) => css`
     background-color: ${colors.orange3.hex};
     border: 1px dashed ${colors.dark3.hex};
-    margin-bottom: ${sizing.fn(1)}px;
   `
 );
 

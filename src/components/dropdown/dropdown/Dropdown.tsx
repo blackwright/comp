@@ -83,8 +83,9 @@ export const Dropdown: React.FC<Props> = ({
       ref: (node: HTMLElement) => {
         triggerRef.current = node;
 
-        if (node && matchTriggerWidth) {
-          setMinListWidth(node.clientWidth);
+        if (node) {
+          const minWidth = matchTriggerWidth ? node.clientWidth : null;
+          setMinListWidth(minWidth);
         }
 
         const { ref: originalRef } = trigger as any;

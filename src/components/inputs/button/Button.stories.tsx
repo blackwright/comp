@@ -1,33 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { Button } from './index';
 import { sizeStringToPadding, Size } from './types';
 
 export default {
   title: 'Input/Button',
-  component: Button
+  component: Button,
+  decorators: [withKnobs]
 };
 
-export const Default = () => <Button>Button</Button>;
+export const Default = () => {
+  const size = select('size', Object.keys(sizeStringToPadding) as Size[], 'md');
+  const isFullWidth = boolean('isFullWidth', false);
+  const disabled = boolean('disabled', false);
+  const children = text('children', 'Button');
 
-export const Sizing = () => (
-  <>
-    {(Object.keys(sizeStringToPadding) as Size[]).map(size => (
-      <Block key={size}>
-        <Button size={size}>{size}</Button>
-      </Block>
-    ))}
-  </>
-);
-
-const Block = styled.div`
-  margin-bottom: ${({ theme }) => theme.sizing.fn()}px;
-`;
-
-export const FullWidth = () => (
-  <div style={{ width: '300px', padding: '8px', background: 'pink' }}>
-    <Button isFullWidth={true}>Full width</Button>
-  </div>
-);
-
-export const Disabled = () => <Button disabled={true}>Button</Button>;
+  return (
+    <Button size={size} isFullWidth={isFullWidth} disabled={disabled}>
+      {children}
+    </Button>
+  );
+};

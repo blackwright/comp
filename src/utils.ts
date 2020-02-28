@@ -18,7 +18,7 @@ export function capitalize(text: string) {
   return text[0].toLocaleUpperCase() + text.slice(1);
 }
 
-export function createKnobsSelect<T>(keys: T[]) {
+export function createKnobsSelectOptions<T>(keys: T[]) {
   const tuples = keys.map(key => [key, key]);
   return {
     ...Object.fromEntries(tuples),

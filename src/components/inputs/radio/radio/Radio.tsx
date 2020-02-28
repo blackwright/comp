@@ -13,6 +13,7 @@ export const Radio: React.FC<Props> = React.forwardRef(
       className,
       value,
       checked,
+      alignItems,
       disabled,
       children,
       ...rest
@@ -47,6 +48,7 @@ export const Radio: React.FC<Props> = React.forwardRef(
       <Components.Label
         data-testid={labelTestId}
         className={className}
+        alignItems={alignItems}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
