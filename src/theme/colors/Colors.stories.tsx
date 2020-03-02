@@ -28,7 +28,12 @@ export const Colors = () => (
             const textColor = isBright(value) ? 'dark4' : 'light1';
 
             return (
-              <ColorSwatch background={hex} p="sm" flow="column nowrap">
+              <ColorSwatch
+                key={hex}
+                background={hex}
+                p="sm"
+                flow="column nowrap"
+              >
                 <Typography as="div" variant="header5" color={textColor}>
                   {name}
                 </Typography>
