@@ -5,8 +5,8 @@ import { ComponentType, TestingProps } from 'types';
 import { ListProps } from './components';
 
 export type CustomizableComponents = {
-  Card?: ComponentType<{}>;
-  List?: ComponentType<ListProps>;
+  Card: ComponentType<{}>;
+  List: ComponentType<ListProps>;
 };
 
 export type Props = {
