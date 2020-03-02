@@ -7,7 +7,7 @@ import { typeableInputStyle } from '../shared';
 
 export const TextAreaComponent: React.FC<Props> = React.forwardRef(
   (
-    { testId, value, fitContents, onChange, ...rest },
+    { testId, value, onChange, fitContents, isFullWidth, isResizable, ...rest },
     ref: React.Ref<HTMLTextAreaElement>
   ) => {
     const [val, setVal] = React.useState(value);
