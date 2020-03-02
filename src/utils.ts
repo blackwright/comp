@@ -1,12 +1,14 @@
-export function mergeRefs<T>(refs: Array<React.Ref<T>>) {
+export function mergeRefs<T>(refs: Array<React.Ref<T | null | undefined>>) {
   return (element: T) => {
-    refs.forEach(ref => {
-      if (typeof ref === 'function') {
-        ref(element);
-      } else if (ref != null) {
-        (ref as React.MutableRefObject<T>).current = element;
-      }
-    });
+    refs
+      .filter(ref => ref != null)
+      .forEach(ref => {
+        if (typeof ref === 'function') {
+          ref(element);
+        } else if (ref != null) {
+          (ref as React.MutableRefObject<T>).current = element;
+        }
+      });
   };
 }
 
