@@ -8,6 +8,7 @@ import {
   Variant as _TypographyVariant
 } from './typography';
 import { Props as _BlockProps } from './block';
+import { Props as _DialogProps } from './dialog';
 
 export { Button } from './inputs/button';
 export type ButtonProps = _ButtonProps;
@@ -30,3 +31,6 @@ export type TypographyVariant = _TypographyVariant;
 
 export { Block } from './block';
 export type BlockProps = _BlockProps;
+
+export { Dialog } from './dialog';
+export type DialogProps = _DialogProps;
