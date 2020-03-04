@@ -1,3 +1,5 @@
+import { select } from '@storybook/addon-knobs';
+
 export function mergeRefs<T>(refs: Array<React.Ref<T | null | undefined>>) {
   return (element: T) => {
     refs
@@ -26,4 +28,16 @@ export function createKnobsSelectOptions<T>(keys: T[]) {
     ...Object.fromEntries(tuples),
     undefined: undefined
   };
+}
+
+export function booleanSelectKnob(label: string) {
+  return select(
+    label,
+    {
+      true: true as any,
+      false: false as any,
+      null: null
+    },
+    null
+  );
 }

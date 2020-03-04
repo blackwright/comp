@@ -5,6 +5,7 @@ import { Placement } from 'popper.js';
 import { Dropdown } from './dropdown';
 import { Button } from 'components/inputs/button';
 import { DropdownItem } from './dropdown-item';
+import { booleanSelectKnob } from 'utils';
 
 export default {
   title: 'Util/Dropdown',
@@ -13,15 +14,7 @@ export default {
 };
 
 export const Default = () => {
-  const isOpen = select(
-    'isOpen',
-    {
-      true: true as any,
-      false: false as any,
-      undefined: undefined
-    },
-    undefined
-  );
+  const isOpen = booleanSelectKnob('isOpen');
 
   const placementOptions = [
     'auto-start',
