@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { Block } from './Block';
 import { sizeStringToNumberValue, MappedSize } from './types';
 import { createKnobsSelectOptions } from 'utils';
@@ -12,6 +12,8 @@ export default {
 };
 
 export const Default = () => {
+  const isInline = boolean('isInline', false);
+
   const flex = text('flex', '1 1 auto');
   const flow = text('flow', 'row nowrap');
 
@@ -40,6 +42,7 @@ export const Default = () => {
 
   return (
     <MarginBlock
+      isInline={isInline}
       p={m}
       pX={mX}
       pY={mY}
@@ -50,6 +53,7 @@ export const Default = () => {
     >
       <BorderBlock p={5}>
         <PaddingBlock
+          isInline={isInline}
           p={p}
           pX={pX}
           pY={pY}

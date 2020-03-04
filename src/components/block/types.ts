@@ -21,6 +21,11 @@ export type Size = number | string;
 
 type FlexProps = {
   /**
+   * Display as inline-flex.
+   * @default false
+   */
+  isInline?: boolean;
+  /**
    * flex property.
    * @default '1 1 0'
    */
