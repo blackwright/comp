@@ -61,7 +61,7 @@ export const variants: Variants = {
     height: '1.5rem'
   },
 
-  heavyCaps: {
+  strongSmallCaps: {
     ...defaults,
     size: '0.75rem',
     height: '1.25rem',

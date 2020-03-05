@@ -7,7 +7,7 @@ type Name =
   | 'paragraph'
   | 'normal'
   | 'subtitle'
-  | 'heavyCaps'
+  | 'strongSmallCaps'
   | 'smallCaps'
   | 'small'
   | 'feather';
