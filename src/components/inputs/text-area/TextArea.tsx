@@ -27,7 +27,7 @@ export const TextAreaComponent: React.FC<Props> = React.forwardRef(
       onChange?.(changeEvent);
 
       if (value == null) {
-        setVal(changeEvent.currentTarget.value);
+        setVal(changeEvent.target.value);
       }
     };
 
