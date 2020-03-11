@@ -16,5 +16,5 @@ export type ComponentType<P = {}> =
   | React.FunctionComponent<P>;
 
 export type Dictionary<T> = {
-  [key: string]: T;
+  [key: string]: T | undefined;
 };
