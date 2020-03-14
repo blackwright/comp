@@ -8,7 +8,7 @@ import { DropdownItem } from './dropdown-item';
 import { booleanSelectKnob } from 'utils';
 
 export default {
-  title: 'Util/Dropdown',
+  title: 'Layout/Dropdown',
   component: Dropdown,
   decorators: [withKnobs]
 };
