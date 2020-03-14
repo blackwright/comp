@@ -1,8 +1,13 @@
 import { ReactNode } from 'react';
+import { Dictionary } from 'types';
 
-export type Props = {
+export type Query = string | Dictionary<string>;
+
+export type Props<Q extends Query> = {
   // Media query string
-  query: string;
+  query: Q;
   // Render prop callback as result of media query test
-  children: (isMatch: boolean) => ReactNode;
+  children: (
+    isMatch: Q extends string ? boolean : Dictionary<boolean>
+  ) => ReactNode;
 };
