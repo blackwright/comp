@@ -1,53 +1,79 @@
 import React from 'react';
+import { withKnobs, text, object } from '@storybook/addon-knobs';
 import { MatchMedia } from './MatchMedia';
+import { Dictionary } from 'types';
 
 export default {
   title: 'Util/MatchMedia',
-  component: MatchMedia
+  component: MatchMedia,
+  decorators: [withKnobs]
 };
 
-const singleQuery = 'only screen and (min-width: 300px) and (max-width: 800px)';
-
-export const SingleQuery = () => (
-  <MatchMedia query={singleQuery}>
-    {isMatch => (
-      <>
-        <span>{singleQuery}: </span>
-        {isMatch ? (
-          <span style={{ color: 'green' }}>true</span>
-        ) : (
-          <span style={{ color: 'red' }}>false</span>
-        )}
-      </>
-    )}
-  </MatchMedia>
-);
-
-SingleQuery.story = {
-  name: 'Single query'
+const queryStyle = {
+  padding: 8,
+  background: 'black',
+  color: 'white'
 };
 
-const multipleQueries = {
-  sm: 'only screen and (max-width: 400px)',
-  md: 'only screen and (min-width: 300px) and (max-width: 800px)',
-  lg: 'only screen and (min-width: 700px)'
+const matchResultStyle = {
+  padding: 8,
+  marginBottom: 8,
+  background: 'lightGrey'
 };
 
-export const MultipleQueries = () => (
-  <MatchMedia query={multipleQueries}>
-    {matches =>
-      (Object.keys(matches) as Array<keyof typeof multipleQueries>).map(
-        queryKey => (
-          <div key={queryKey} style={{ marginBottom: '8px' }}>
-            <span>{multipleQueries[queryKey]}: </span>
-            {matches[queryKey] ? (
+export const SingleQuery = () => {
+  const query = text(
+    'query',
+    'only screen and (min-width: 300px) and (max-width: 800px)'
+  );
+
+  return (
+    <MatchMedia query={query}>
+      {isMatch => (
+        <>
+          <div style={queryStyle}>{query}</div>
+          <div style={matchResultStyle}>
+            <span>Matches: </span>
+            {isMatch ? (
               <span style={{ color: 'green' }}>true</span>
             ) : (
               <span style={{ color: 'red' }}>false</span>
             )}
           </div>
-        )
-      )
-    }
-  </MatchMedia>
-);
+        </>
+      )}
+    </MatchMedia>
+  );
+};
+
+SingleQuery.story = {
+  name: 'Single query'
+};
+
+export const MultipleQueries = () => {
+  const query = object('query', {
+    sm: 'only screen and (max-width: 400px)',
+    md: 'only screen and (min-width: 300px) and (max-width: 800px)',
+    lg: 'only screen and (min-width: 700px)'
+  });
+
+  return (
+    <MatchMedia query={query}>
+      {matches =>
+        (Object.keys(matches) as Array<keyof typeof query>).map(queryKey => (
+          <React.Fragment key={queryKey}>
+            <div style={queryStyle}>{query[queryKey]}</div>
+            <div style={matchResultStyle}>
+              <span>{queryKey}: </span>
+              {matches[queryKey] ? (
+                <span style={{ color: 'green' }}>true</span>
+              ) : (
+                <span style={{ color: 'red' }}>false</span>
+              )}
+            </div>
+          </React.Fragment>
+        ))
+      }
+    </MatchMedia>
+  );
+};
