@@ -27,7 +27,6 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
     border-radius: ${sizing.borderRadius};
     width: ${sizing.fn(2)}px;
     height: ${sizing.fn(2)}px;
-    margin-right: ${sizing.fn()}px;
     border: 1px solid
       ${disabled ? colors.background.disabled.hex : colors.blue3.hex};
     transition: all ${transitions.slow};

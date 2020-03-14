@@ -35,7 +35,7 @@ export const Button = styled(ButtonComponent)<Props>(
       background: ${passiveColor.hex};
       color: ${getTextColor(colors[color], disabled).hex};
       border-radius: ${sizing.borderRadius};
-      transition: background ${transitions.fast};
+      transition: all ${transitions.fast};
       ${isFullWidth && 'width: 100%;'}
       outline: 0;
       border: 0;
