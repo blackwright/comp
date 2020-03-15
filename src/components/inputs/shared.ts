@@ -7,6 +7,8 @@ export function typeableInputStyle(
   disabled?: boolean
 ) {
   return css`
+    font-size: ${theme.font.variants.normal.size};
+    line-height: ${theme.font.variants.normal.height};
     padding: ${theme.sizing.fn(1)}px;
     background: ${getBackgroundColor(disabled).hex};
     color: ${getTextColor(disabled).hex};
@@ -14,7 +16,7 @@ export function typeableInputStyle(
     border: 1px solid ${theme.colors.gray1.hex};
     transition: all ${theme.transitions.fast};
     ${isFullWidth && 'width: 100%;'}
-    word-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     outline: 0;
