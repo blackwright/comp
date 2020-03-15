@@ -31,7 +31,7 @@ const variants: Record<VariantName, VariantColors> = {
     text: monochrome.light1,
     background: {
       passive: blues.blue6,
-      hover: darken(blues.blue6, 0.75),
+      hover: darken(blues.blue6),
       active: darken(blues.blue6, 1.5)
     }
   },
@@ -39,7 +39,7 @@ const variants: Record<VariantName, VariantColors> = {
     text: monochrome.light1,
     background: {
       passive: greens.green6,
-      hover: darken(greens.green6, 0.75),
+      hover: darken(greens.green6),
       active: darken(greens.green6, 1.5)
     }
   },
@@ -47,7 +47,7 @@ const variants: Record<VariantName, VariantColors> = {
     text: monochrome.light1,
     background: {
       passive: reds.red5,
-      hover: darken(reds.red5, 0.75),
+      hover: darken(reds.red5),
       active: darken(reds.red5, 1.5)
     }
   },
@@ -63,16 +63,16 @@ const variants: Record<VariantName, VariantColors> = {
     text: monochrome.light1,
     background: {
       passive: reds.red8,
-      hover: darken(reds.red8, 0.75),
+      hover: darken(reds.red8),
       active: darken(reds.red8, 1.5)
     }
   },
   warning: {
-    text: monochrome.light1,
+    text: monochrome.dark4,
     background: {
-      passive: yellows.yellow8,
-      hover: darken(yellows.yellow8, 0.75),
-      active: darken(yellows.yellow8, 1.5)
+      passive: yellows.yellow6,
+      hover: darken(yellows.yellow6, 0.3),
+      active: darken(yellows.yellow6)
     }
   }
 };

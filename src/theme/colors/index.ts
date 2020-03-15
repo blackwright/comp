@@ -53,6 +53,4 @@ export const colors = {
 
 export type ColorName = keyof typeof raw;
 
-export type VariantName = keyof typeof variants;
-
-export { RGB, ColorScale, ColorCSS, ColorValues } from './types';
+export { RGB, ColorScale, ColorCSS, ColorValues, VariantName } from './types';
