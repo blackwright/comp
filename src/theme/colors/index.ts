@@ -1,10 +1,8 @@
 import { rgbColors } from './colors';
-import { addCSSToColorDictionary } from './utils';
-
-export { RGB, ColorScale, ColorCSS, ColorValues } from './types';
+import { addCSSToColor, addCSSToColorDictionary } from './utils';
 
 const { byHue, ...rest } = rgbColors;
-const { background, text, ...raw } = rest;
+const { variants, text, ...raw } = rest;
 
 export const colors = {
   byHue: {
@@ -19,9 +17,42 @@ export const colors = {
     teals: addCSSToColorDictionary(byHue.teals),
     yellows: addCSSToColorDictionary(byHue.yellows)
   },
-  background: addCSSToColorDictionary(background),
+  variants: {
+    disabled: {
+      text: addCSSToColor(variants.disabled.text),
+      background: addCSSToColorDictionary(variants.disabled.background)
+    },
+    action: {
+      text: addCSSToColor(variants.action.text),
+      background: addCSSToColorDictionary(variants.action.background)
+    },
+    positive: {
+      text: addCSSToColor(variants.positive.text),
+      background: addCSSToColorDictionary(variants.positive.background)
+    },
+    negative: {
+      text: addCSSToColor(variants.negative.text),
+      background: addCSSToColorDictionary(variants.negative.background)
+    },
+    neutral: {
+      text: addCSSToColor(variants.neutral.text),
+      background: addCSSToColorDictionary(variants.neutral.background)
+    },
+    error: {
+      text: addCSSToColor(variants.error.text),
+      background: addCSSToColorDictionary(variants.error.background)
+    },
+    warning: {
+      text: addCSSToColor(variants.warning.text),
+      background: addCSSToColorDictionary(variants.warning.background)
+    }
+  },
   text: addCSSToColorDictionary(text),
   ...addCSSToColorDictionary(raw)
 };
 
 export type ColorName = keyof typeof raw;
+
+export type VariantName = keyof typeof variants;
+
+export { RGB, ColorScale, ColorCSS, ColorValues } from './types';

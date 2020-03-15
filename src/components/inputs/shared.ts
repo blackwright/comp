@@ -32,7 +32,7 @@ export function typeableInputStyle(
 
 function getBackgroundColor(isDisabled?: boolean) {
   if (isDisabled) {
-    return theme.colors.background.disabled;
+    return theme.colors.variants.disabled.background.passive;
   }
 
   return theme.colors.white;
@@ -40,7 +40,7 @@ function getBackgroundColor(isDisabled?: boolean) {
 
 function getTextColor(isDisabled?: boolean) {
   if (isDisabled) {
-    return theme.colors.text.disabled;
+    return theme.colors.variants.disabled.text;
   }
 
   return theme.colors.text.dark;

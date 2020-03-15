@@ -4,7 +4,7 @@ import { Props } from './types';
 export const Slider = styled.div<Props>(
   ({ checked, disabled, theme: { colors, sizing, transitions } }) => css`
     background: ${disabled
-      ? colors.background.disabled.hex
+      ? colors.variants.disabled.background.passive.hex
       : checked
       ? colors.blue4.hex
       : colors.gray4.hex};

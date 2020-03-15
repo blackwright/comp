@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { darken } from 'theme/colors/utils';
 import { Props } from './index';
 import { sizeStringToPadding } from './types';
-import { getBackgroundColor, getTextColor } from './utils';
+import { getVariantColors } from './utils';
 
 export const ButtonComponent: React.FC<Props> = React.forwardRef(
   ({ testId, isFullWidth, ...rest }, ref: React.Ref<HTMLButtonElement>) => {
@@ -14,26 +13,24 @@ export const ButtonComponent: React.FC<Props> = React.forwardRef(
 ButtonComponent.defaultProps = {
   testId: 'button',
   type: 'submit',
-  size: 'md',
-  color: 'blue6'
+  variant: 'action',
+  size: 'md'
 };
 
 export const Button = styled(ButtonComponent)<Props>(
   ({
+    variant = 'action',
     size = 'md',
-    color = 'blue6',
     disabled,
     isFullWidth,
-    theme: { sizing, colors, transitions }
+    theme: { sizing, transitions }
   }) => {
-    const passiveColor = getBackgroundColor(colors[color], disabled);
-    const hoverColor = darken(passiveColor, 0.75);
-    const activeColor = darken(hoverColor, 0.75);
+    const variantColors = getVariantColors(variant, disabled);
 
     return css`
       padding: ${sizeStringToPadding[size].y}px ${sizeStringToPadding[size].x}px;
-      background: ${passiveColor.hex};
-      color: ${getTextColor(colors[color], disabled).hex};
+      background: ${variantColors.background.passive.hex};
+      color: ${variantColors.text.hex};
       border-radius: ${sizing.borderRadius};
       transition: all ${transitions.fast};
       ${isFullWidth && 'width: 100%;'}
@@ -43,11 +40,11 @@ export const Button = styled(ButtonComponent)<Props>(
       ${!disabled &&
         css`
           :hover {
-            background: ${hoverColor.hex};
+            background: ${variantColors.background.hover.hex};
           }
 
           :active {
-            background: ${activeColor.hex};
+            background: ${variantColors.background.active.hex};
           }
         `}
     `;

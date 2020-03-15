@@ -10,18 +10,71 @@ import {
   teals,
   yellows
 } from './raw';
-
-const background = {
-  ...monochrome,
-  action: blues.blue4,
-  error: reds.red3,
-  disabled: monochrome.light4
-};
+import { darken } from './utils';
+import { VariantName, VariantColors } from './types';
 
 const text = {
   light: monochrome.light1,
-  dark: monochrome.dark4,
-  disabled: monochrome.gray1
+  dark: monochrome.dark4
+};
+
+const variants: Record<VariantName, VariantColors> = {
+  disabled: {
+    text: monochrome.gray1,
+    background: {
+      passive: monochrome.light4,
+      hover: monochrome.light4,
+      active: monochrome.light4
+    }
+  },
+  action: {
+    text: monochrome.light1,
+    background: {
+      passive: blues.blue6,
+      hover: darken(blues.blue6, 0.75),
+      active: darken(blues.blue6, 1.5)
+    }
+  },
+  positive: {
+    text: monochrome.light1,
+    background: {
+      passive: greens.green6,
+      hover: darken(greens.green6, 0.75),
+      active: darken(greens.green6, 1.5)
+    }
+  },
+  negative: {
+    text: monochrome.light1,
+    background: {
+      passive: reds.red5,
+      hover: darken(reds.red5, 0.75),
+      active: darken(reds.red5, 1.5)
+    }
+  },
+  neutral: {
+    text: monochrome.dark4,
+    background: {
+      passive: monochrome.light4,
+      hover: darken(monochrome.light4, 0.3),
+      active: darken(monochrome.light4, 0.5)
+    }
+  },
+  error: {
+    text: monochrome.light1,
+    background: {
+      passive: reds.red8,
+      hover: darken(reds.red8, 0.75),
+      active: darken(reds.red8, 1.5)
+    }
+  },
+  warning: {
+    text: monochrome.light1,
+    background: {
+      passive: yellows.yellow8,
+      hover: darken(yellows.yellow8, 0.75),
+      active: darken(yellows.yellow8, 1.5)
+    }
+  }
 };
 
 export const rgbColors = {
@@ -47,6 +100,6 @@ export const rgbColors = {
   ...reds,
   ...teals,
   ...yellows,
-  background,
+  variants,
   text
 };

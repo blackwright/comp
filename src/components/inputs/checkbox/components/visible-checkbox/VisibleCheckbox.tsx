@@ -22,34 +22,36 @@ export const VisibleCheckbox = styled(VisibleCheckboxComponent)(
     disabled,
     isHovered,
     theme: { sizing, colors, transitions }
-  }) => css`
-    color: ${colors.white.hex};
-    border-radius: ${sizing.borderRadius};
-    width: ${sizing.fn(2)}px;
-    height: ${sizing.fn(2)}px;
-    border: 1px solid
-      ${disabled ? colors.background.disabled.hex : colors.blue3.hex};
-    transition: all ${transitions.slow};
-    background: ${checked ? colors.background.action.hex : colors.white.hex};
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
+  }) => {
+    const variantColors = disabled
+      ? colors.variants.disabled
+      : colors.variants.action;
 
-    & > ${CheckIcon} {
-      opacity: ${checked ? 1 : 0};
-      transition: opacity ${transitions.fast};
-    }
+    return css`
+      color: ${colors.white.hex};
+      border-radius: ${sizing.borderRadius};
+      width: ${sizing.fn(2)}px;
+      height: ${sizing.fn(2)}px;
+      border: 1px solid ${variantColors.background.passive.hex};
+      transition: all ${transitions.slow};
+      background: ${checked || disabled
+        ? variantColors.background.passive.hex
+        : colors.white.hex};
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
 
-    ${isHovered &&
-      !disabled &&
-      `
-        border-color: ${colors.background.action.hex};
+      & > ${CheckIcon} {
+        opacity: ${checked ? 1 : 0};
+        transition: opacity ${transitions.fast};
+      }
+
+      ${isHovered &&
+        !disabled &&
+        `
+        border-color: ${variantColors.background.hover.hex};
       `}
-
-    ${disabled &&
-      `
-      background: ${colors.background.disabled.hex};
-    `}
-  `
+    `;
+  }
 );

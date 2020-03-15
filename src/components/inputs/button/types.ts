@@ -1,6 +1,7 @@
 import { ComponentProps } from 'types';
-import { theme, ColorName } from '../../../theme';
+import { theme, ColorName, VariantName } from 'theme';
 
+// Map size keys to x and y padding.
 export const sizeStringToPadding = {
   xs: {
     x: theme.sizing.fn(1),
@@ -33,14 +34,13 @@ export type Props = {
    */
   size?: Size;
   /**
-   * Background color.
-   * Text color is monochrome light or dark, dependent on contrast.
-   * @default blue6
-   */
-  color?: ColorName;
-  /**
    * Match parent width.
    * @default false
    */
   isFullWidth?: boolean;
+  /**
+   * Determines preset colors.
+   * @default action
+   */
+  variant?: VariantName;
 } & ComponentProps<'button'>;

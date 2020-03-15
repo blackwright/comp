@@ -18,7 +18,7 @@ export const PlacementContainer = styled(motion.div)(
 
         ${Arrow} {
           border-width: ${arrowWidth}px ${arrowWidth}px 0;
-          border-top-color: ${colors.background.dark1.hex};
+          border-top-color: ${colors.dark1.hex};
           bottom: 0;
           margin-top: 0;
           margin-bottom: 0;
@@ -33,7 +33,7 @@ export const PlacementContainer = styled(motion.div)(
         ${Arrow} {
           left: 0;
           border-width: ${arrowWidth}px ${arrowWidth}px ${arrowWidth}px 0;
-          border-right-color: ${colors.background.dark1.hex};
+          border-right-color: ${colors.dark1.hex};
           margin-left: 0;
           margin-right: 0;
         }
@@ -46,7 +46,7 @@ export const PlacementContainer = styled(motion.div)(
 
         ${Arrow} {
           border-width: 0 ${arrowWidth}px ${arrowWidth}px;
-          border-bottom-color: ${colors.background.dark1.hex};
+          border-bottom-color: ${colors.dark1.hex};
           top: 0;
           margin-top: 0;
           margin-bottom: 0;
@@ -61,7 +61,7 @@ export const PlacementContainer = styled(motion.div)(
         ${Arrow} {
           margin-top: -${arrowWidth}px;
           border-width: ${arrowWidth}px 0 ${arrowWidth}px ${arrowWidth}px;
-          border-left-color: ${colors.background.dark1.hex};
+          border-left-color: ${colors.dark1.hex};
           right: 0;
           margin-left: 0;
           margin-right: 0;

@@ -18,11 +18,12 @@ export const DropdownItemComponent: React.FC<Props> = ({
 export const DropdownItem = styled(DropdownItemComponent)(
   ({ onClick, disabled, theme: { colors, sizing } }) => {
     const isInteractable = !disabled && !!onClick;
+    const disabledColors = colors.variants.disabled;
 
     return css`
-      color: ${disabled ? colors.text.disabled.hex : colors.text.dark.hex};
+      color: ${disabled ? disabledColors.text.hex : colors.text.dark.hex};
       background: ${disabled
-        ? colors.background.disabled.hex
+        ? disabledColors.background.passive.hex
         : colors.white.hex};
       padding: ${sizing.fn(1)}px ${sizing.fn(2)}px;
       display: flex;
@@ -33,7 +34,7 @@ export const DropdownItem = styled(DropdownItemComponent)(
       cursor: default;
 
       :hover {
-        ${disabled && `color: ${colors.text.disabled.hex};`};
+        ${disabled && `color: ${disabledColors.text.hex};`};
       }
 
       ${isInteractable &&

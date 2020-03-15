@@ -1,4 +1,5 @@
 import { select } from '@storybook/addon-knobs';
+import { colors, VariantName } from 'theme/colors';
 
 export function mergeRefs<T>(refs: Array<React.Ref<T | null | undefined>>) {
   return (element: T) => {
@@ -26,7 +27,7 @@ export function createKnobsSelectOptions<T>(keys: T[]) {
   const tuples = keys.map(key => [key, key]);
   return {
     ...Object.fromEntries(tuples),
-    undefined: undefined
+    null: null
   };
 }
 
@@ -40,4 +41,8 @@ export function booleanSelectKnob(label: string) {
     },
     null
   );
+}
+
+export function getColorVariantKeys() {
+  return Object.keys(colors.variants) as VariantName[];
 }

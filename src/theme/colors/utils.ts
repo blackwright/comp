@@ -48,13 +48,17 @@ export function rgbToHex(color: RGB) {
   return chroma(color).hex();
 }
 
+export function addCSSToColor(color: RGB) {
+  return {
+    hex: rgbToHex(color),
+    rgb: rgbToCSS(color),
+    value: color
+  };
+}
+
 export function addCSSToColorDictionary<T>(dictionary: T) {
   return Object.entries(dictionary).reduce((acc, [key, value]) => {
-    acc[key as keyof typeof dictionary] = {
-      hex: rgbToHex(value),
-      rgb: rgbToCSS(value),
-      value
-    };
+    acc[key as keyof typeof dictionary] = addCSSToColor(value);
     return acc;
   }, {} as Record<keyof typeof dictionary, ColorValues>);
 }
@@ -63,20 +67,8 @@ export function isBright(color: RGB): boolean {
   return chroma(color).get('lab.l') > 65;
 }
 
-export function darken(color: RGB | ColorValues, amount = 1): ColorValues {
-  let rgb: RGB;
-
-  if ('value' in color) {
-    rgb = color.value;
-  } else {
-    rgb = color;
-  }
-
-  const darkened = chroma(rgb).darken(amount);
-
-  return {
-    value: darkened.rgb(),
-    hex: darkened.hex(),
-    rgb: darkened.css()
-  };
+export function darken(color: RGB, amount = 0.75): RGB {
+  return chroma(color)
+    .darken(amount)
+    .rgb();
 }

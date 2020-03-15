@@ -1,28 +1,9 @@
-import { colors, ColorValues } from 'theme/colors';
-import { isBright } from 'theme/colors/utils';
+import { colors, VariantName } from 'theme/colors';
 
-export function getBackgroundColor(
-  backgroundColor: ColorValues,
-  isDisabled?: boolean
-) {
+export function getVariantColors(variant: VariantName, isDisabled?: boolean) {
   if (isDisabled) {
-    return colors.background.disabled;
+    return colors.variants.disabled;
   }
 
-  return backgroundColor;
-}
-
-export function getTextColor(
-  backgroundColor: ColorValues,
-  isDisabled?: boolean
-) {
-  if (isDisabled) {
-    return colors.text.disabled;
-  }
-
-  if (isBright(backgroundColor.value)) {
-    return colors.text.dark;
-  }
-
-  return colors.text.light;
+  return colors.variants[variant];
 }

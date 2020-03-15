@@ -21,3 +21,21 @@ export type ColorCSS = {
 export type ColorValues = {
   value: RGB;
 } & ColorCSS;
+
+export type VariantName =
+  | 'disabled'
+  | 'action'
+  | 'positive'
+  | 'negative'
+  | 'neutral'
+  | 'error'
+  | 'warning';
+
+export type VariantColors = {
+  text: RGB;
+  background: {
+    passive: RGB;
+    hover: RGB;
+    active: RGB;
+  };
+};

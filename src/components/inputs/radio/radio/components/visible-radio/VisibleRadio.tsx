@@ -28,27 +28,32 @@ export const VisibleRadio = styled(VisibleRadioComponent)(
     checked,
     disabled,
     theme: { colors, sizing, transitions }
-  }) => css`
-    color: ${colors.white.hex};
-    width: ${sizing.fn(2)}px;
-    height: ${sizing.fn(2)}px;
-    margin-right: ${sizing.fn()}px;
-    border: 1px solid
-      ${disabled ? colors.background.disabled.hex : colors.blue3.hex};
-    background: ${checked ? colors.background.action.hex : colors.white.hex};
-    transition: all ${transitions.fast};
-    border-radius: 50%;
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
+  }) => {
+    const variantColors = disabled
+      ? colors.variants.disabled
+      : colors.variants.action;
 
-    ${disabled && `background: ${colors.background.disabled.hex};`}
+    return css`
+      color: ${colors.white.hex};
+      width: ${sizing.fn(2)}px;
+      height: ${sizing.fn(2)}px;
+      margin-right: ${sizing.fn()}px;
+      border: 1px solid ${variantColors.background.passive.hex};
+      background: ${checked || disabled
+        ? variantColors.background.passive.hex
+        : colors.white.hex};
+      transition: all ${transitions.fast};
+      border-radius: 50%;
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
 
-    ${isHovered &&
-      !disabled &&
-      css`
-        border-color: ${colors.background.action.hex};
-      `}
-  `
+      ${isHovered &&
+        !disabled &&
+        css`
+          border-color: ${variantColors.background.hover.hex};
+        `}
+    `;
+  }
 );
