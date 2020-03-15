@@ -21,10 +21,13 @@ export function typeableInputStyle(
 
     ${!disabled &&
       css`
-        :hover,
+        :hover {
+          border-color: ${theme.colors.variants.action.background.hover.hex};
+        }
+
         :focus,
         :active {
-          border-color: ${theme.colors.blue6.hex};
+          border-color: ${theme.colors.variants.action.background.active.hex};
         }
       `}
   `;
