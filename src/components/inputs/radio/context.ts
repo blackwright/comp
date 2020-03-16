@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
 type RadioContext = {
   value: any;
@@ -7,7 +7,7 @@ type RadioContext = {
   disabled?: boolean;
 };
 
-export const Context = React.createContext<RadioContext>({
+export const Context = createContext<RadioContext>({
   value: undefined,
   name: undefined,
   disabled: undefined,

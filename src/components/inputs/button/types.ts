@@ -1,5 +1,5 @@
 import { ComponentProps } from 'types';
-import { theme, ColorName, VariantName } from 'theme';
+import { theme, VariantName } from 'theme';
 
 // Map size keys to x and y padding.
 export const sizeStringToPadding = {
