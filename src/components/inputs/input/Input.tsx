@@ -9,13 +9,13 @@ export const InputComponent: React.FC<Props> = React.forwardRef(
   }
 );
 
-InputComponent.defaultProps = {
-  testId: 'input',
-  type: 'text'
-};
-
-export const Input = styled(InputComponent)(
+export const Input = styled(InputComponent)<Props>(
   ({ theme, isFullWidth, disabled }) => css`
     ${typeableInputStyle(theme, isFullWidth, disabled)}
   `
 );
+
+Input.defaultProps = {
+  testId: 'input',
+  type: 'text'
+};
