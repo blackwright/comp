@@ -13,6 +13,7 @@ export const Badge = styled.span.attrs<Props>(({ testId }) => ({
     background: ${variantColors.background.passive.hex};
     border-radius: ${sizing.borderRadius};
     display: inline-flex;
+    align-items: center;
   `;
 });
 
