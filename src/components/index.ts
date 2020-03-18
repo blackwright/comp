@@ -32,6 +32,7 @@ import {
   DropdownItemProps as _DropdownItemProps
 } from './dropdown';
 import { Props as _BadgeProps } from './badge';
+import { Props as _PillProps } from './pill';
 
 export { Button } from './inputs/button';
 export type ButtonProps = _ButtonProps;
@@ -84,3 +85,6 @@ export type DropdownItemProps = _DropdownItemProps;
 
 export { Badge } from './badge';
 export type BadgeProps = _BadgeProps;
+
+export { Pill } from './pill';
+export type PillProps = _PillProps;
