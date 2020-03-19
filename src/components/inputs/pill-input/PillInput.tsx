@@ -8,6 +8,7 @@ export const PillInput: React.FC<Props> = React.forwardRef(
   (
     {
       testId,
+      variant,
       pillValues,
       onPillChange,
       value,
@@ -115,6 +116,7 @@ export const PillInput: React.FC<Props> = React.forwardRef(
         {state.pillValues.map((value, i) => (
           <Pill
             key={i}
+            variant={variant}
             label={value}
             value={value}
             onClick={() => removePill(i)}
@@ -135,3 +137,8 @@ export const PillInput: React.FC<Props> = React.forwardRef(
     );
   }
 );
+
+PillInput.defaultProps = {
+  testId: 'pill-input',
+  variant: 'neutral'
+};

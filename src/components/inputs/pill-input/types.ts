@@ -1,7 +1,11 @@
 import { Ref } from 'react';
 import { Props as InputProps } from 'components/inputs/input';
+import { VariantName } from 'theme';
 
 export type Props = {
+  /**
+   * Inner input element ref.
+   */
   ref?: Ref<HTMLInputElement>;
   /**
    * Controlled pill values.
@@ -15,4 +19,9 @@ export type Props = {
    * Controlled input value.
    */
   value?: string;
+  /**
+   * Color variant.
+   * @default neutral
+   */
+  variant?: VariantName;
 } & Omit<InputProps, 'ref' | 'value'>;
