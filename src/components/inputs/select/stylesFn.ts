@@ -5,6 +5,10 @@ export default function stylesFn({
   colors,
   transitions
 }: DefaultTheme): ReactSelectStyles {
+  const hoveredOption = colors.blue2.hex;
+  const focusedOption = colors.blue3.hex;
+  const activeOption = colors.blue4.hex;
+
   return {
     control: (base, state) => ({
       ...base,
@@ -19,26 +23,17 @@ export default function stylesFn({
     }),
     option: (base, state) => ({
       ...base,
-      color: state.isDisabled
-        ? colors.variants.disabled.text.hex
-        : state.isSelected
-        ? colors.variants.action.text.hex
-        : state.isFocused
-        ? colors.white.hex
-        : colors.text.dark.hex,
+      color: colors.text.dark.hex,
       background: state.isFocused
-        ? colors.variants.action.background.hover.hex
+        ? hoveredOption
         : state.isSelected
-        ? colors.variants.action.background.passive.hex
+        ? focusedOption
         : colors.white.hex,
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
       '&:active': {
-        color: colors.white.hex,
-        background: state.isDisabled
-          ? colors.white.hex
-          : colors.variants.action.background.active.hex
+        background: state.isDisabled ? colors.white.hex : activeOption
       }
     })
   };
