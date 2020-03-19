@@ -1,8 +1,7 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { Badge } from './Badge';
-import { variantToColorsMapping, VariantName } from './types';
-import { createKnobsSelectOptions } from 'utils';
+import { getColorVariantKeys } from 'utils';
 
 export default {
   title: 'Layout/Badge',
@@ -11,11 +10,7 @@ export default {
 };
 
 export const Default = () => {
-  const variantOptions = createKnobsSelectOptions(
-    Object.keys(variantToColorsMapping) as VariantName[]
-  );
-
-  const variant = select('variant', variantOptions, 'neutral');
+  const variant = select('variant', getColorVariantKeys(), 'neutral');
 
   return <Badge variant={variant}>Henlo</Badge>;
 };
