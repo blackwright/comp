@@ -2,11 +2,14 @@ import styled, { css } from 'styled-components';
 import { Props } from './types';
 
 export const Input = styled.input<Props>(
-  ({ hasPill, theme: { font, sizing } }) => css`
+  ({ hasPill, disabled, theme: { font, sizing, colors } }) => css`
     font-size: ${font.variants.normal.size};
     line-height: ${font.variants.normal.height};
-    margin: 0;
+    background: ${disabled
+      ? colors.variants.disabled.background.passive.hex
+      : colors.white.hex};
     ${hasPill && `margin-left: ${sizing.fn(0.25)}px;`}
+    margin: 0;
     width: 70px;
     border: 0;
     border-radius: 0;

@@ -14,6 +14,7 @@ export const PillInput: React.FC<Props> = React.forwardRef(
       onFocus,
       onBlur,
       onKeyDown,
+      isFullWidth,
       disabled,
       ...rest
     },
@@ -108,6 +109,7 @@ export const PillInput: React.FC<Props> = React.forwardRef(
         as="div"
         onClick={handleWrapperClick}
         isFocused={state.isFocused}
+        isFullWidth={isFullWidth}
         disabled={disabled}
       >
         {state.pillValues.map((value, i) => (
