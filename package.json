@@ -52,9 +52,11 @@
     "@storybook/preset-create-react-app": "^1.5.1",
     "@storybook/react": "^5.3.3",
     "@types/chroma-js": "^1.4.3",
+    "@types/faker": "^4.1.10",
     "@types/react-select": "^3.0.11",
     "@types/react-window": "^1.8.1",
     "@types/styled-components": "^4.4.2",
-    "csstype": "^2.6.9"
+    "csstype": "^2.6.9",
+    "faker": "^4.1.0"
   }
 }
