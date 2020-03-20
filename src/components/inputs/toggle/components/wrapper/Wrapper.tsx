@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.label(
   ({ theme: { sizing } }) => css`
-    width: ${sizing.fn(4.5)}px;
-    height: ${sizing.fn(2.5)}px;
+    width: ${sizing.fn(5.5)}px;
+    height: ${sizing.fn(3)}px;
     position: relative;
     display: inline-flex;
     margin: 0;

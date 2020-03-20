@@ -9,7 +9,7 @@ export const Slider = styled.div<Props>(
       ? colors.blue4.hex
       : colors.gray4.hex};
     transition: background ${transitions.slow};
-    border-radius: ${sizing.fn(2.5)}px;
+    border-radius: ${sizing.fn(3)}px;
     position: absolute;
     top: 0;
     right: 0;
