@@ -27,10 +27,10 @@ export function getChildHeightUsingStyles({
     } = child;
 
     if (type === 'option') {
-      const { height = 40 } = optionStyles;
+      const { height = 34 } = optionStyles;
       return ensureIsNumber(height);
     } else if (type === 'group') {
-      const { height = 24, marginBottom = 4 } = groupHeadingStyles;
+      const { height = 14, marginBottom = 3 } = groupHeadingStyles;
       const { paddingTop = 8 } = groupStyles;
       return (
         ensureIsNumber(height) +
@@ -50,7 +50,7 @@ export function getChildHeightUsingStyles({
       const { height = 40 } = loadingMsgStyles;
       return ensureIsNumber(height);
     } else {
-      return 40;
+      return 34;
     }
   };
 }

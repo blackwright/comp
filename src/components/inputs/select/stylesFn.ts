@@ -13,13 +13,25 @@ export default function stylesFn({
     control: (base, state) => ({
       ...base,
       borderColor: colors.gray1.hex,
+      transition: `border-color ${transitions.slow}`,
+      boxShadow: 'none',
       '&:hover': {
         borderColor: state.isFocused
           ? colors.variants.action.background.active.hex
           : colors.variants.action.background.hover.hex
-      },
-      transition: `border-color ${transitions.slow}`,
-      boxShadow: 'none'
+      }
+    }),
+    group: base => ({
+      ...base,
+      // Move all padding to top to make styling consistent with virtualized options,
+      // where everything is absolutely positioned and dependent on heights
+      paddingTop: 16,
+      paddingBottom: 0
+    }),
+    groupHeading: base => ({
+      ...base,
+      height: 14,
+      marginBottom: 3
     }),
     option: (base, state) => ({
       ...base,
@@ -32,6 +44,7 @@ export default function stylesFn({
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
+      height: 34,
       '&:active': {
         background: state.isDisabled ? colors.white.hex : activeOption
       }
