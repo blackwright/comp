@@ -11,6 +11,10 @@ export const RadioGroup: React.FC<Props> = ({
 }) => {
   const [stateValue, setStateValue] = React.useState<any>(value ?? null);
 
+  React.useEffect(() => {
+    setStateValue(value);
+  }, [value]);
+
   const handleChange = (newValue: any) => {
     onChange?.(newValue);
 
@@ -18,10 +22,6 @@ export const RadioGroup: React.FC<Props> = ({
       setStateValue(newValue);
     }
   };
-
-  React.useEffect(() => {
-    setStateValue(value);
-  }, [value]);
 
   return (
     <Context.Provider
