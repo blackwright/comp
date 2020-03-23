@@ -1,90 +1,51 @@
-import { Props as _ButtonProps } from './inputs/button';
-import {
-  Props as _CheckboxProps,
-  VisibleCheckboxProps as _VisibleCheckboxProps,
-  CheckboxLabelProps as _CheckboxLabelProps
-} from './inputs/checkbox';
-import { Props as _InputProps } from './inputs/input';
-import { Props as _NumberInputProps } from './inputs/number-input';
-import {
-  RadioGroupProps as _RadioGroupProps,
-  RadioProps as _RadioProps
-} from './inputs/radio';
-import {
-  Props as _SelectProps,
-  Options as _SelectOptions
-} from './inputs/select';
-import { Props as _TextAreaProps } from './inputs/text-area';
-import { Props as _ToggleProps } from './inputs/toggle';
-import {
-  Props as _MatchMediaProps,
-  Query as _MatchMediaQuery
-} from './match-media';
-import {
-  Props as _TypographyProps,
-  Variant as _TypographyVariant
-} from './typography';
-import { Props as _BlockProps } from './block';
-import { Props as _CardProps } from './card';
-import { Props as _DialogProps } from './dialog';
-import {
-  DropdownProps as _DropdownProps,
-  DropdownItemProps as _DropdownItemProps
-} from './dropdown';
-import { Props as _BadgeProps } from './badge';
-import { Props as _PillProps } from './pill';
-
 export { Button } from './inputs/button';
-export type ButtonProps = _ButtonProps;
+export type { Props as ButtonProps } from './inputs/button'
 
 export { Checkbox } from './inputs/checkbox';
-export type CheckboxProps = _CheckboxProps;
-export type VisibleCheckboxProps = _VisibleCheckboxProps;
-export type CheckboxLabelProps = _CheckboxLabelProps;
+export type {
+  Props as CheckboxProps,
+  VisibleCheckboxProps,
+  CheckboxLabelProps
+} from './inputs/checkbox';
 
 export { Input } from './inputs/input';
-export type InputProps = _InputProps;
+export type { Props as InputProps } from './inputs/input';
 
 export { NumberInput } from './inputs/number-input';
-export type NumberInputProps = _NumberInputProps;
+export type { Props as NumberInputProps } from './inputs/number-input';
 
 export { RadioGroup, Radio } from './inputs/radio';
-export type RadioGroupProps = _RadioGroupProps;
-export type RadioProps = _RadioProps;
+export type { RadioGroupProps, RadioProps } from './inputs/radio';
 
 export { Select } from './inputs/select';
-export type SelectProps<Option> = _SelectProps<Option>;
-export type SelectOptions<Option> = _SelectOptions<Option>;
+export type { Props as SelectProps, Options as SelectOptions } from './inputs/select';
 
 export { TextArea } from './inputs/text-area';
-export type TextAreaProps = _TextAreaProps;
+export type { Props as TextAreaProps } from './inputs/text-area';
 
 export { Toggle } from './inputs/toggle';
-export type ToggleProps = _ToggleProps;
+export type { Props as ToggleProps } from './inputs/toggle';
 
 export { MatchMedia } from './match-media';
-export type MatchMediaQuery = _MatchMediaQuery;
-export type MatchMediaProps<Q extends MatchMediaQuery> = _MatchMediaProps<Q>;
+export type { Query as MatchMediaQuery, Props as MatchMediaProps } from './match-media';
 
 export { Typography } from './typography';
-export type TypographyProps = _TypographyProps;
-export type TypographyVariant = _TypographyVariant;
+export type { Props as TypographyProps, Variant as TypographyVariant } from './typography';
 
 export { Block } from './block';
-export type BlockProps = _BlockProps;
+export type { Props as BlockProps } from './block'
 
 export { Card } from './card';
-export type CardProps = _CardProps;
+export type { Props as CardProps } from './card';
 
 export { Dialog } from './dialog';
-export type DialogProps = _DialogProps;
+export type { Props as DialogProps } from './dialog';
 
 export { Dropdown } from './dropdown';
-export type DropdownProps = _DropdownProps;
-export type DropdownItemProps = _DropdownItemProps;
+export type { DropdownProps, DropdownItemProps } from './dropdown';
 
 export { Badge } from './badge';
-export type BadgeProps = _BadgeProps;
+export type { Props as BadgeProps } from './badge';
 
 export { Pill } from './pill';
-export type PillProps = _PillProps;
+export type { Props as PillProps } from './pill';

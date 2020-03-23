@@ -1,8 +1,5 @@
-import { Props as _RadioGroupProps } from './radio-group';
-import { Props as _RadioProps } from './radio';
-
 export { RadioGroup } from './radio-group';
-export type RadioGroupProps = _RadioGroupProps;
+export type { Props as RadioGroupProps } from './radio-group';
 
 export { Radio } from './radio';
-export type RadioProps = _RadioProps;
+export type { Props as RadioProps } from './radio';

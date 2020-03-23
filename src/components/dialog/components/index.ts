@@ -1,12 +1,8 @@
-import { Props as _WrapperProps } from './wrapper';
-import { Props as _BackdropProps } from './backdrop';
-import { Props as _InnerDialogProps } from './inner-dialog';
-
 export { Wrapper } from './wrapper';
-export type WrapperProps = _WrapperProps;
+export type { Props as WrapperProps } from './wrapper';
 
 export { Backdrop } from './backdrop';
-export type BackdropProps = _BackdropProps;
+export type { Props as BackdropProps } from './backdrop';
 
 export { InnerDialog } from './inner-dialog';
-export type InnerDialogProps = _InnerDialogProps;
+export type { Props as InnerDialogProps } from './inner-dialog';
