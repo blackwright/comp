@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import { Card } from './Card';
-import { sizeStringToNumberValue, MappedSize } from 'components/block/types';
+import { sizeStringToNumberValue, MappedSize } from 'components/box/types';
 import { shadows as themeShadows, ShadowName } from 'theme/shadows';
 import { createKnobsSelectOptions } from 'utils';
 
@@ -32,19 +32,19 @@ export const Default = () => {
   );
 
   const m = select('m', boxSizes, 'md');
-  const mX = select('mX', boxSizes, undefined);
-  const mY = select('mY', boxSizes, undefined);
-  const mTop = select('mTop', boxSizes, undefined);
-  const mRight = select('mRight', boxSizes, undefined);
-  const mBottom = select('mBottom', boxSizes, undefined);
-  const mLeft = select('mLeft', boxSizes, undefined);
+  const mx = select('mx', boxSizes, undefined);
+  const my = select('my', boxSizes, undefined);
+  const mt = select('mt', boxSizes, undefined);
+  const mr = select('mr', boxSizes, undefined);
+  const mb = select('mb', boxSizes, undefined);
+  const ml = select('ml', boxSizes, undefined);
   const p = select('p', boxSizes, 'md');
-  const pX = select('pX', boxSizes, undefined);
-  const pY = select('pY', boxSizes, undefined);
-  const pTop = select('pTop', boxSizes, undefined);
-  const pRight = select('pRight', boxSizes, undefined);
-  const pBottom = select('pBottom', boxSizes, undefined);
-  const pLeft = select('pLeft', boxSizes, undefined);
+  const px = select('px', boxSizes, undefined);
+  const py = select('py', boxSizes, undefined);
+  const pt = select('pt', boxSizes, undefined);
+  const pr = select('pr', boxSizes, undefined);
+  const pb = select('pb', boxSizes, undefined);
+  const pl = select('pl', boxSizes, undefined);
 
   return (
     <Card
@@ -54,21 +54,21 @@ export const Default = () => {
       flow={flow}
       justifyContent={justifyContent}
       m={m}
-      mX={mX}
-      mY={mY}
-      mTop={mTop}
-      mRight={mRight}
-      mBottom={mBottom}
-      mLeft={mLeft}
+      mx={mx}
+      my={my}
+      mt={mt}
+      mr={mr}
+      mb={mb}
+      ml={ml}
       p={p}
-      pX={pX}
-      pY={pY}
-      pTop={pTop}
-      pRight={pRight}
-      pBottom={pBottom}
-      pLeft={pLeft}
+      px={px}
+      py={py}
+      pt={pt}
+      pr={pr}
+      pb={pb}
+      pl={pl}
     >
-      A Card is a Block with a shadow
+      A Card is a Box with a shadow
     </Card>
   );
 };

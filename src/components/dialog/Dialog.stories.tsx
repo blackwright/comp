@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Dialog } from './Dialog';
-import { Block } from 'components/block';
+import { Box } from 'components/box';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 export default {
@@ -16,18 +16,18 @@ export const Default = () => {
   const useBackdrop = boolean('useBackdrop', true);
 
   return (
-    <ColoredBlock pX="xl" pY="xl" alignItems="center" justifyContent="center">
+    <ColoredBox px="xl" py="xl" alignItems="center" justifyContent="center">
       Non-portal renders inside nearest relatively positioned parent.
       <Dialog isOpen={isOpen} usePortal={usePortal} useBackdrop={useBackdrop}>
-        <Block pX="md" pY="md">
+        <Box px="md" py="md">
           Content
-        </Block>
+        </Box>
       </Dialog>
-    </ColoredBlock>
+    </ColoredBox>
   );
 };
 
-const ColoredBlock = styled(Block)`
+const ColoredBox = styled(Box)`
   background: gray;
   position: relative;
   max-width: 400px;

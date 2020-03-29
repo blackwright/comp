@@ -27,17 +27,17 @@ export function getSizeValue(size?: Size): string {
 export function appendIndividualPaddings(props: SpacingProps) {
   let css = '';
 
-  if (props.pTop) {
-    css += `padding-top: ${getSizeValue(props.pTop)};`;
+  if (props.pt) {
+    css += `padding-top: ${getSizeValue(props.pt)};`;
   }
-  if (props.pRight) {
-    css += `padding-right: ${getSizeValue(props.pRight)};`;
+  if (props.pr) {
+    css += `padding-right: ${getSizeValue(props.pr)};`;
   }
-  if (props.pBottom) {
-    css += `padding-bottom: ${getSizeValue(props.pBottom)};`;
+  if (props.pb) {
+    css += `padding-bottom: ${getSizeValue(props.pb)};`;
   }
-  if (props.pLeft) {
-    css += `padding-left: ${getSizeValue(props.pLeft)};`;
+  if (props.pl) {
+    css += `padding-left: ${getSizeValue(props.pl)};`;
   }
 
   return css;
@@ -46,17 +46,17 @@ export function appendIndividualPaddings(props: SpacingProps) {
 export function appendIndividualMargins(props: SpacingProps) {
   let css = '';
 
-  if (props.mTop) {
-    css += `margin-top: ${getSizeValue(props.mTop)};`;
+  if (props.mt) {
+    css += `margin-top: ${getSizeValue(props.mt)};`;
   }
-  if (props.mRight) {
-    css += `margin-right: ${getSizeValue(props.mRight)};`;
+  if (props.mr) {
+    css += `margin-right: ${getSizeValue(props.mr)};`;
   }
-  if (props.mBottom) {
-    css += `margin-bottom: ${getSizeValue(props.mBottom)};`;
+  if (props.mb) {
+    css += `margin-bottom: ${getSizeValue(props.mb)};`;
   }
-  if (props.mLeft) {
-    css += `margin-left: ${getSizeValue(props.mLeft)};`;
+  if (props.ml) {
+    css += `margin-left: ${getSizeValue(props.ml)};`;
   }
 
   return css;

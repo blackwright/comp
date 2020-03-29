@@ -32,8 +32,8 @@ export type { Query as MatchMediaQuery, Props as MatchMediaProps } from './match
 export { Typography } from './typography';
 export type { Props as TypographyProps, Variant as TypographyVariant } from './typography';
 
-export { Block } from './block';
-export type { Props as BlockProps } from './block'
+export { Box } from './box';
+export type { Props as BoxProps } from './box'
 
 export { Card } from './card';
 export type { Props as CardProps } from './card';

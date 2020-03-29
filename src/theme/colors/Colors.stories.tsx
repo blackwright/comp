@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Block, Typography } from '../../components';
+import { Box, Typography } from '../../components';
 import { colors } from './index';
 import { isBright } from './utils';
 
@@ -37,12 +37,12 @@ export const Colors = () => (
                 <Typography as="div" variant="header5" color={textColor}>
                   {name}
                 </Typography>
-                <Block mTop="xs">
+                <Box mt="xs">
                   <Typography as="div" variant="small" color={textColor}>
                     <div>{hex}</div>
                     <div>{rgb}</div>
                   </Typography>
-                </Block>
+                </Box>
               </ColorSwatch>
             );
           }
@@ -60,7 +60,7 @@ const SwatchContainer = styled.div`
   grid-row-gap: 0px;
 `;
 
-const ColorSwatch = styled(Block)<{ background: string }>(
+const ColorSwatch = styled(Box)<{ background: string }>(
   ({ background, theme }) => css`
     background: ${background};
     height: 100px;

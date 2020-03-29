@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { Block } from '../block';
+import { Box } from '../box';
 import { Props } from './types';
 
-export const Card = styled(Block)<Props>(
+export const Card = styled(Box)<Props>(
   ({
     shadow = 'md',
     background = 'white',

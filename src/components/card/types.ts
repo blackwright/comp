@@ -1,6 +1,6 @@
 import { ShadowName } from 'theme/shadows';
 import { ColorName } from 'theme/colors';
-import { Props as BlockProps } from '../block';
+import { Props as BoxProps } from '../box';
 
 export type Props = {
   /**
@@ -17,4 +17,4 @@ export type Props = {
    * @default white
    */
   background?: ColorName;
-} & BlockProps;
+} & BoxProps;

@@ -6,7 +6,7 @@ import {
   appendIndividualMargins
 } from './utils';
 
-export const Block = styled.div.attrs<Props>(({ testId }) => ({
+export const Box = styled.div.attrs<Props>(({ testId }) => ({
   'data-testid': testId
 }))<Props>(
   ({ isInline, flex, flow, alignItems, justifyContent, ...spacing }) => {
@@ -21,13 +21,13 @@ export const Block = styled.div.attrs<Props>(({ testId }) => ({
     if (spacing.p != null) {
       css += `padding: ${getSizeValue(spacing.p)};`;
     }
-    if (spacing.pX != null) {
-      const value = getSizeValue(spacing.pX);
+    if (spacing.px != null) {
+      const value = getSizeValue(spacing.px);
       css += `padding-left: ${value};`;
       css += `padding-right: ${value};`;
     }
-    if (spacing.pY != null) {
-      const value = getSizeValue(spacing.pY);
+    if (spacing.py != null) {
+      const value = getSizeValue(spacing.py);
       css += `padding-top: ${value};`;
       css += `padding-bottom: ${value};`;
     }
@@ -35,13 +35,13 @@ export const Block = styled.div.attrs<Props>(({ testId }) => ({
     if (spacing.m != null) {
       css += `margin: ${getSizeValue(spacing.m)};`;
     }
-    if (spacing.mX != null) {
-      const value = getSizeValue(spacing.mX);
+    if (spacing.mx != null) {
+      const value = getSizeValue(spacing.mx);
       css += `margin-left: ${value};`;
       css += `margin-right: ${value};`;
     }
-    if (spacing.mY != null) {
-      const value = getSizeValue(spacing.mY);
+    if (spacing.my != null) {
+      const value = getSizeValue(spacing.my);
       css += `margin-top: ${value};`;
       css += `margin-bottom: ${value};`;
     }
@@ -55,8 +55,8 @@ export const Block = styled.div.attrs<Props>(({ testId }) => ({
   }
 );
 
-Block.defaultProps = {
-  testId: 'block',
+Box.defaultProps = {
+  testId: 'box',
   isInline: false,
   flex: '1 1 0',
   flow: 'row nowrap',

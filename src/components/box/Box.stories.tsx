@@ -1,13 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import { Block } from './Block';
+import { Box } from './Box';
 import { sizeStringToNumberValue, MappedSize } from './types';
 import { createKnobsSelectOptions } from 'utils';
 
 export default {
-  title: 'Layout/Block',
-  component: Block,
+  title: 'Layout/Box',
+  component: Box,
   decorators: [withKnobs]
 };
 
@@ -26,77 +26,77 @@ export const Default = () => {
   );
 
   const m = select('m', boxSizes, 'md');
-  const mX = select('mX', boxSizes, undefined);
-  const mY = select('mY', boxSizes, undefined);
-  const mTop = select('mTop', boxSizes, undefined);
-  const mRight = select('mRight', boxSizes, undefined);
-  const mBottom = select('mBottom', boxSizes, undefined);
-  const mLeft = select('mLeft', boxSizes, undefined);
+  const mx = select('mx', boxSizes, undefined);
+  const my = select('my', boxSizes, undefined);
+  const mt = select('mt', boxSizes, undefined);
+  const mr = select('mr', boxSizes, undefined);
+  const mb = select('mb', boxSizes, undefined);
+  const ml = select('ml', boxSizes, undefined);
   const p = select('p', boxSizes, 'md');
-  const pX = select('pX', boxSizes, undefined);
-  const pY = select('pY', boxSizes, undefined);
-  const pTop = select('pTop', boxSizes, undefined);
-  const pRight = select('pRight', boxSizes, undefined);
-  const pBottom = select('pBottom', boxSizes, undefined);
-  const pLeft = select('pLeft', boxSizes, undefined);
+  const px = select('px', boxSizes, undefined);
+  const py = select('py', boxSizes, undefined);
+  const pt = select('pt', boxSizes, undefined);
+  const pr = select('pr', boxSizes, undefined);
+  const pb = select('pb', boxSizes, undefined);
+  const pl = select('pl', boxSizes, undefined);
 
   return (
-    <MarginBlock
+    <MarginBox
       isInline={isInline}
       p={m}
-      pX={mX}
-      pY={mY}
-      pTop={mTop}
-      pRight={mRight}
-      pBottom={mBottom}
-      pLeft={mLeft}
+      px={mx}
+      py={my}
+      pt={mt}
+      pr={mr}
+      pb={mb}
+      pl={ml}
     >
-      <BorderBlock p={5}>
-        <PaddingBlock
+      <BorderBox p={5}>
+        <PaddingBox
           isInline={isInline}
           p={p}
-          pX={pX}
-          pY={pY}
-          pTop={pTop}
-          pRight={pRight}
-          pBottom={pBottom}
-          pLeft={pLeft}
+          px={px}
+          py={py}
+          pt={pt}
+          pr={pr}
+          pb={pb}
+          pl={pl}
         >
-          <TextBlock
+          <TextBox
             p="xs"
             flex={flex}
             flow={flow}
             justifyContent={justifyContent}
           >
             Content
-          </TextBlock>
-        </PaddingBlock>
-      </BorderBlock>
-    </MarginBlock>
+          </TextBox>
+        </PaddingBox>
+      </BorderBox>
+    </MarginBox>
   );
 };
 
-const MarginBlock = styled(Block)(
+const MarginBox = styled(Box)(
   ({ theme: { colors } }) => css`
     background-color: ${colors.orange3.hex};
     border: 1px dashed ${colors.dark3.hex};
   `
 );
 
-const PaddingBlock = styled(Block)(
+const PaddingBox = styled(Box)(
   ({ theme: { colors } }) => css`
     background-color: ${colors.green2.hex};
     border: 1px dashed ${colors.dark3.hex};
   `
 );
 
-const BorderBlock = styled(Block)(
+const BorderBox = styled(Box)(
   ({ theme: { colors } }) => css`
     background-color: ${colors.yellow3.hex};
   `
 );
 
-const TextBlock = styled(Block)(
+const TextBox = styled(Box)(
   ({ theme: { colors } }) => css`
     background-color: ${colors.blue2.hex};
     border: 1px dashed ${colors.dark3.hex};

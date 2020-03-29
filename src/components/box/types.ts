@@ -57,27 +57,27 @@ export type PaddingProps = {
   /**
    * X-axis padding size.
    */
-  pX?: Size;
+  px?: Size;
   /**
    * Y-axis padding size.
    */
-  pY?: Size;
+  py?: Size;
   /**
    * Top padding size.
    */
-  pTop?: Size;
+  pt?: Size;
   /**
    * Right padding size.
    */
-  pRight?: Size;
+  pr?: Size;
   /**
    * Bottom padding size.
    */
-  pBottom?: Size;
+  pb?: Size;
   /**
    * Left padding size.
    */
-  pLeft?: Size;
+  pl?: Size;
 };
 
 // x/y sizing overrides overall sizing.
@@ -90,27 +90,27 @@ export type MarginProps = {
   /**
    * X-axis margin size.
    */
-  mX?: Size;
+  mx?: Size;
   /**
    * Y-axis margin size.
    */
-  mY?: Size;
+  my?: Size;
   /**
    * Top margin size.
    */
-  mTop?: Size;
+  mt?: Size;
   /**
    * Right margin size.
    */
-  mRight?: Size;
+  mr?: Size;
   /**
    * Bottom margin size.
    */
-  mBottom?: Size;
+  mb?: Size;
   /**
    * Left margin size.
    */
-  mLeft?: Size;
+  ml?: Size;
 };
 
 export type SpacingProps = PaddingProps & MarginProps;
