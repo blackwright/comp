@@ -27,20 +27,22 @@ export function createKnobsSelectOptions<T>(keys: T[]) {
   const tuples = keys.map(key => [key, key]);
   return {
     ...Object.fromEntries(tuples),
-    null: null
+    undefined: undefined
   };
 }
 
 export function booleanSelectKnob(label: string) {
-  return select(
+  const value = select(
     label,
     {
       true: true as any,
       false: false as any,
-      null: null
+      undefined: undefined
     },
-    null
+    undefined
   );
+
+  return value === '' ? undefined : value;
 }
 
 export function getColorVariantKeys() {
