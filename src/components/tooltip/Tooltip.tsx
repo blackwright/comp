@@ -18,7 +18,9 @@ export const Tooltip: React.FC<Props> = ({
   const [openState, setOpenState] = React.useState(isOpen ?? false);
 
   React.useEffect(() => {
-    if (isOpen != null) {
+    if (isOpen == null) {
+      setOpenState(false);
+    } else {
       setOpenState(isOpen);
     }
   }, [isOpen]);
