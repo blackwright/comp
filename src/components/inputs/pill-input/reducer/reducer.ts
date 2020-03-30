@@ -1,4 +1,4 @@
-import { Action, State } from './types';
+import { State, Action } from './types';
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
